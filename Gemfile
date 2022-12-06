@@ -81,3 +81,7 @@ gem 'sorcery'
 
 # Use it to create data
 gem 'faker'
+
+# tailwind.css introduction
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
