@@ -41,7 +41,16 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "byebug", platforms: %i[ mri mingw x64_mingw ]
+  # Set up for development and test environments
+  gem 'sqlite3', '~> 1.4'
+  # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug'
+  # To create a test
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -52,6 +61,23 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem "spring"
+
+  # Ruby code style checking and code formatting tool
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  # Provides a better error page
+  gem 'better_errors'
+  # Add a console to the error page
+  gem 'binding_of_caller'
+  # help to kill N+1 queries and unused eager loading
+  gem 'bullet'
+  # RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
+  gem 'rails_admin'
 end
 
+# User authentication
+gem 'sorcery'
+
+# Use it to create data
+gem 'faker'
