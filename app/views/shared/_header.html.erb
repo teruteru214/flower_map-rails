@@ -1,0 +1,31 @@
+<header class = "bg-green-600">
+  <div class="navbar">
+    <div class="flex-1">
+      <%= link_to 'Flower Map', '#', class: 'btn btn-ghost text-white' %>
+    </div>
+    <div class="flex-none lg:hidden">
+      <ul class="menu menu-horizontal p-0">
+        <li>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-info bg-green-600 hover:bg-green-500 text-white">Menu</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 top-20">
+              <li>
+                <%= link_to 'ログイン', '#' %>
+              </li>
+              <li>
+                <%= link_to 'ログアウト', '#' %>
+              </li>
+              <li>
+                <%= link_to '見つけた花を投稿', '#' %>
+              </li>
+              <li>
+                <%= link_to 'マイページ', '#' %>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
