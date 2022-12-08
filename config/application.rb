@@ -33,5 +33,12 @@ module FlowerMapRails
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Don't generate roots and test and helper
+    config.generators do |g|
+      g.skip_routes true
+      g.test_framework false
+      g.helper false
+    end
   end
 end
