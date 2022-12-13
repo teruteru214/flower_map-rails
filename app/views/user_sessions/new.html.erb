@@ -1,0 +1,32 @@
+<div class="hero min-h-screen bg-base-200">
+  <div class="hero-content flex-col lg:flex-row-reverse">
+    <div class="text-center lg:text-left">
+      <h1 class="text-3xl font-bold">ログイン</h1>
+    </div>
+    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <%= form_with model: @user, class: 'card-body' do |f|%>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">メールアドレス</span>
+          </label>
+          <%= f.text_field :email, placeholder: "email", class: "input input-borderd border-opacity-20" %>
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">パスワード</span>
+          </label>
+          <%= f.password_field :password, placeholder: "password", class: "input input-borderd border-opacity-20" %>
+          <label class="label">
+            <a href="#" class="label-text-alt link link-hover">パスワードを忘れた方はこちら</a>
+          </label>
+          <label class="label">
+            <a href="users/new" class="label-text-alt link link-hover">新規登録はこちら</a>
+          </label>
+        </div>
+        <div class="form-control mt-6">
+          <%= f.submit "ログイン", class: "btn btn-success bg-green-600 hover:bg-green-600 text-white" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
