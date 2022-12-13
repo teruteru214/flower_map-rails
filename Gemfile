@@ -73,7 +73,7 @@ group :development do
   # help to kill N+1 queries and unused eager loading
   gem 'bullet'
   # RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
-  gem 'rails_admin'
+  # gem 'rails_admin'
 end
 
 # User authentication
@@ -85,3 +85,6 @@ gem 'faker'
 # tailwind.css introduction
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
+
+# jquery
+gem 'jquery-rails'
