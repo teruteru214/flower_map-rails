@@ -16,15 +16,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_26_003609) do
 
   create_table "flowers", force: :cascade do |t|
     t.string "name", null: false
-    t.time "datetime", null: false
+    t.datetime "datetime", null: false
     t.integer "status", null: false
     t.string "flower_word"
     t.string "birth_flower_day"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude", null: false
-    t.float "longitude", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.string "address", null: false
     t.index ["user_id"], name: "index_flowers_on_user_id"
   end

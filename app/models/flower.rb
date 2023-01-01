@@ -2,8 +2,6 @@ class Flower < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true, length: { maximum: 50 }
-  validates :latitude, presence: true
-  validates :longitude, presence: true
   validates :address, presence: true, length: { maximum: 150 }
   validates :flower_word, length: { maximum: 50 }
 
