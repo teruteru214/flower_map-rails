@@ -89,3 +89,6 @@ gem 'jsbundling-rails'
 # image
 gem 'carrierwave'
 gem 'mini_magick'
+
+# 環境変数設定のため
+gem 'dotenv-rails'
