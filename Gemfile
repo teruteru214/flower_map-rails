@@ -86,5 +86,6 @@ gem 'faker'
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
-# jquery
-gem 'jquery-rails'
+# image
+gem 'carrierwave'
+gem 'mini_magick'
