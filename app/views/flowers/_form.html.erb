@@ -1,0 +1,21 @@
+<%= form_with model: flower, local: true do |f| %>
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">住所</span>
+    </label>
+    <%= f.text_field :address, placeholder: "東京スカイツリー", class: "input input-borderd border-opacity-20" %>
+  </div>
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">花の名前</span>
+    </label>
+    <%= f.text_field :name, placeholder: "ヒマワリ", class: "input input-borderd border-opacity-20" %>
+  </div>
+  <div class="form-group">
+    <label class="label">
+      <span class="label-text">花の状態</span>
+    </label>
+    <%= f.select :status, Flower.statuses.keys.to_a, {} %>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
