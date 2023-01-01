@@ -9,8 +9,8 @@ class FlowersController < ApplicationController
     @flower = Flower.new
   end
 
-  def created
-    @flower = current_user.flower.build(flower_params)
+  def create
+    @flower = current_user.flowers.build(flower_params)
     if @flower.save
       redirect_to flowers_path, success: "投稿完了"
     else
