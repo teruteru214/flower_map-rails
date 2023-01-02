@@ -1,4 +1,5 @@
 class Flower < ApplicationRecord
+  mount_uploader :flower_image, FlowerImageUploader
   belongs_to :user
 
   validates :name, presence: true, length: { maximum: 50 }
