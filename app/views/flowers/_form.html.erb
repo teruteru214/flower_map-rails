@@ -80,11 +80,33 @@ function codeAddress(){
     </label>
     <%= f.text_field :name, placeholder: "ヒマワリ", class: "input input-borderd border-opacity-20" %>
   </div>
-  <div class="form-group">
+  <div class="form-control">
     <label class="label">
       <span class="label-text">花の状態</span>
     </label>
     <%= f.select :status, Flower.statuses.keys.to_a, {} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :flower_image %>
+    <%= f.file_field :flower_image, onchange: 'previewImage()', class: 'form-control' %>
+    <%= f.hidden_field :flower_image_cache %>
+    <%= image_tag flower.flower_image_url, id: 'preview' %>
+    <script>
+      function previewImage() {
+        const target = this.event.target;
+        const file = target.files[0];
+        const reader  = new FileReader();
+        reader.onloadend = function () {
+            const preview = document.querySelector("#preview")
+            if(preview) {
+                preview.src = reader.result;
+            }
+        }
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+      }
+    </script>
   </div>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
