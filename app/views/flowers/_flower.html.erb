@@ -2,7 +2,7 @@
   <div id="flower-id-<%= flower.id %>">
     <div class="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src="assets/sun-flower.jpg" alt="Flower" width="200" height="200"/>
+        <%= image_tag flower.flower_image_url %>
       </figure>
       <div class="card-body">
         <h2 class="card-title"><%= flower.name %></h2>

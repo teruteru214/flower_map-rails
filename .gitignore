@@ -37,3 +37,6 @@
 
 # enviroment
 /.env
+
+# image
+/public/uploads

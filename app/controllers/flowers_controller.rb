@@ -26,6 +26,6 @@ class FlowersController < ApplicationController
   private
 
   def flower_params
-    params.require(:flower).permit(:name, :address, :datetime,:status)
+    params.require(:flower).permit(:name, :address, :datetime,:status, :flower_image, :flower_image_cache)
   end
 end
