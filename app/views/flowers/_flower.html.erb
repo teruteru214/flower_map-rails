@@ -1,14 +1,14 @@
-<div class="flower-content">
+<div class="flower-content m-5">
   <div id="flower-id-<%= flower.id %>">
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure>
-        <%= image_tag flower.flower_image_url %>
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title"><%= flower.name %></h2>
-        <p><%= flower.address %></p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">詳細</button>
+    <div class="card w-full bg-base-100 shadow-xl">
+      <div class="flex">
+        <figure class="p-10">
+          <%= image_tag flower.flower_image_url, class: "rounded-xl" %>
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title"><%= flower.name %></h2>
+          <p>場所: <%= flower.address %></p>
+          <p>時間: <%= flower.datetime %></p>
         </div>
       </div>
     </div>
