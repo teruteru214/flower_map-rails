@@ -1,9 +1,13 @@
-<div class="hero min-h-screen" style="background-image: url('http://localhost:3000/assets/flower-photograph-ef0885abc9a1ff1f9417e8329634e7131ae47cd042f47a455c9d02e41b8e3b20.jpg');">
+<div class="hero min-h-screen" style="background-image: url('assets/flower-photograph.jpg');">
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
     <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-medium">あなたの見つけた花共有しませんか？</h1>
-      <%= link_to "ログイン", login_path , class: "btn btn btn-accent bg-green-600 border-green-600 text-sm text-white font-bold"%>
+      <h1 class="mb-5 text-3xl font-medium">見つけた花を共有する</h1>
+      <p>FlowerMapは道端で見つけた花の位置を記録、</p>
+      <p>共有するアプリです。</p>
+      <% if !logged_in? %>
+        <%= link_to "ログインする", login_path , class: "btn btn btn-accent bg-green-600 border-green-600 hover:bg-green-500 text-sm text-white font-bold"%>
+      <% end %>
     </div>
   </div>
 </div>
