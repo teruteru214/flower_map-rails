@@ -12,9 +12,9 @@ class FlowersController < ApplicationController
   def create
     @flower = current_user.flowers.build(flower_params)
     if @flower.save
-      redirect_to flowers_path, success: "投稿完了"
+      redirect_to flowers_path, success: "投稿完了しました！"
     else
-      flash.now['danger'] = "投稿失敗"
+      flash.now['danger'] = "投稿が失敗しました。不足している項目があります"
       render :new
     end
   end

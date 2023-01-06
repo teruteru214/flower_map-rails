@@ -5,12 +5,13 @@
         <%= image_tag 'flower-title.png' %>
       <% end %>
     </div>
-    <div class="flex-none m-1">
-      <ul class="menu menu-horizontal p-0">
-        <li class="text-gray-700">
-          <%= link_to "ログイン", login_path , class: "text-sm text-white font-bold"%>
-        </li>
-      </ul>
+    <div class="flex-row lg:hidden">
+      <%= link_to new_user_path do %>
+        <%= image_tag 'new_user.png', width: '50%', height: '50%' %>
+      <% end %>
+      <%= link_to login_path do %>
+        <%= image_tag 'login.png', width: '50%', height: '50%' %>
+      <% end %>
     </div>
   </div>
 </header>

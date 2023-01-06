@@ -90,5 +90,5 @@ gem 'jsbundling-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
-# 環境変数設定のため
+# google_map_api_enviroment
 gem 'dotenv-rails'

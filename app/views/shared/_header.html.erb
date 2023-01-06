@@ -5,28 +5,19 @@
         <%= image_tag 'flower-title.png' %>
       <% end %>
     </div>
-    <div class="flex-none lg:hidden">
-      <ul class="menu menu-horizontal p-0">
-        <li>
-          <div class="dropdown dropdown-end">
-            <label tabindex="0" class="btn btn-info bg-green-600 hover:bg-green-500 text-white">Menu</label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 top-20">
-              <li>
-                <%= link_to 'ログアウト', logout_path %>
-              </li>
-              <li>
-                <%= link_to '見つけた花を投稿', new_flower_path %>
-              </li>
-              <li>
-                <%= link_to '投稿された花一覧', flowers_path %>
-              </li>
-              <li>
-                <%= link_to 'マイページ', '#' %>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+    <div class="flex-row lg:hidden">
+      <%= link_to new_flower_path do %>
+        <%= image_tag 'paper_airplane.png', width: '50%', height: '50%' %>
+      <% end %>
+      <%= link_to flowers_path do %>
+        <%= image_tag 'flower_index.png', width: '50%', height: '50%' %>
+      <% end %>
+      <%= link_to '#' do %>
+        <%= image_tag 'mypage.png', width: '50%', height: '50%' %>
+      <% end %>
+      <%= link_to logout_path do %>
+        <%= image_tag 'logout.png', width: '50%', height: '50%' %>
+      <% end %>
     </div>
   </div>
 </header>
