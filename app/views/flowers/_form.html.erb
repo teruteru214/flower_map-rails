@@ -1,7 +1,6 @@
-<input id="address" type="textbox" placeholder="東京駅">
-<input type="button" value="検索" onclick="codeAddress()">
-<div id='map' style="height: 400px; width: 400px"></div>
-
+<input id="address" type="text" class="input input-bordered input-sm w-full max-w-xs text-left mb-1" placeholder="東京駅">
+<input type="button" class="btn btn-active btn-accent btn-sm text-white", value="検索" onclick="codeAddress()">
+<div id='map' style="height: 500px; width: 380px"></div>
 <script>
 //初期マップの設定
 let map
@@ -66,31 +65,39 @@ function codeAddress(){
     <label class="label">
       <span class="label-text">住所</span>
     </label>
-    <%= f.text_field :address, placeholder: "東京駅", class: "input input-borderd border-opacity-20" %>
+    <%= f.text_field :address, placeholder: "東京駅", class: "input w-96" %>
   </div>
   <div class="form-control">
     <label class="label">
       <span class="label-text">日付</span>
     </label>
-    <%= f.datetime_field :datetime, class: "input input-borderd border-opacity-20" %>
+    <%= f.datetime_field :datetime, class: "input w-96" %>
   </div>
   <div class="form-control">
     <label class="label">
       <span class="label-text">花の名前</span>
     </label>
-    <%= f.text_field :name, placeholder: "ヒマワリ", class: "input input-borderd border-opacity-20" %>
+    <%= f.text_field :name, placeholder: "ヒマワリ", class: "input w-96" %>
   </div>
   <div class="form-control">
     <label class="label">
       <span class="label-text">花の状態</span>
     </label>
-    <%= f.select :status, Flower.statuses.keys.to_a, {} %>
+    <div class="rating rating-lg">
+      <%= f.radio_button :status, :bad, class: "mask mask-star-2 bg-orange-400" %>
+      <%= f.radio_button :status, :rather_bad, class: "mask mask-star-2 bg-orange-400" %>
+      <%= f.radio_button :status, :usually, class: "mask mask-star-2 bg-orange-400" %>
+      <%= f.radio_button :status, :good, class: "mask mask-star-2 bg-orange-400" %>
+      <%= f.radio_button :status, :beautiful, class: "mask mask-star-2 bg-orange-400" %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.label :flower_image %>
-    <%= f.file_field :flower_image, onchange: 'previewImage()', class: 'form-control' %>
+    <label class="label">
+      <span class="label-text">花の写真</span>
+    </label>
+    <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input file-input-bordered file-input-accent w-96" %>
     <%= f.hidden_field :flower_image_cache %>
-    <%= image_tag flower.flower_image_url, id: 'preview' %>
+    <%= image_tag flower.flower_image_url, size: '380x380', id: 'preview', class: "mt-5" %>
     <script>
       function previewImage() {
         const target = this.event.target;
@@ -108,5 +115,5 @@ function codeAddress(){
       }
     </script>
   </div>
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit "見つけた花を投稿する", class: "btn btn-active btn-accent text-white mt-5" %>
 <% end %>
