@@ -1,63 +1,9 @@
 <input id="address" type="text" class="input input-bordered input-sm w-full max-w-xs text-left mb-1" placeholder="東京駅">
 <input type="button" class="btn btn-active btn-accent btn-sm text-white", value="検索" onclick="codeAddress()">
-<div id='map' style="height: 500px; width: 380px"></div>
-<script>
-//初期マップの設定
-let map
-let marker
-function initMap(){
-  geocoder = new google.maps.Geocoder()
+<div id='map' style="height: 500px; width: 380px" onclick="touchAddress()"></div>
 
-  map = new google.maps.Map(document.getElementById('map'), {
-    center:  {lat: 35.6803997, lng:139.7690174},  //東京
-    zoom: 15,
+<%= javascript_include_tag 'google_map' %>
 
-  });
-}
-
-//検索後のマップ作成
-let geocoder
-let aft
-function codeAddress(){
-  let inputAddress = document.getElementById('address').value;
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-        //マーカーが複数できないようにする
-        if (aft == true){
-            marker.setMap(null);
-        }
-
-        //新しくマーカーを作成する
-        map.setCenter(results[0].geometry.location);
-            marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location,
-            draggable: true	// ドラッグ可能にする
-        });
-
-        //二度目以降か判断
-        aft = true
-
-        //検索した時に緯度経度を入力する
-        document.getElementById('body').value = results[0].formatted_address.replace(/^日本, /, '');
-        document.getElementById('lat').value = results[0].geometry.location.lat();
-        document.getElementById('lng').value = results[0].geometry.location.lng();
-
-        // マーカーのドロップ（ドラッグ終了）時のイベント
-        google.maps.event.addListener( marker, 'dragend', function(ev){
-            // イベントの引数evの、プロパティ.latLngが緯度経度
-            // document.getElementById('body').value = ev.address.formatted_address.replace(/^日本, /, '');
-            // document.getElementById('body').value = ev.google.maps.LatLng(lat, lng);
-            document.getElementById('lat').value = ev.latLng.lat();
-            document.getElementById('lng').value = ev.latLng.lng();
-        });
-    } else {
-      alert('該当する結果がありませんでした：' + status);
-    }
-  });
-}
-
-</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_CLOUD_API_KEY'] %>&callback=initMap" async defer></script>
 
 <%= form_with model: flower, local: true do |f| %>
@@ -98,22 +44,8 @@ function codeAddress(){
     <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input file-input-bordered file-input-accent w-96" %>
     <%= f.hidden_field :flower_image_cache %>
     <%= image_tag flower.flower_image_url, size: '380x380', id: 'preview', class: "mt-5" %>
-    <script>
-      function previewImage() {
-        const target = this.event.target;
-        const file = target.files[0];
-        const reader  = new FileReader();
-        reader.onloadend = function () {
-            const preview = document.querySelector("#preview")
-            if(preview) {
-                preview.src = reader.result;
-            }
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-      }
-    </script>
+
+    <%= javascript_include_tag 'flower_image' %>
   </div>
   <%= f.submit "見つけた花を投稿する", class: "btn btn-active btn-accent text-white mt-5" %>
 <% end %>
