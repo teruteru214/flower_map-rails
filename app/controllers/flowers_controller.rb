@@ -21,6 +21,8 @@ class FlowersController < ApplicationController
 
   def show
     @flower = Flower.find(params[:id])
+    @comment = Comment.new
+    @comments = @flower.comments.includes(:user).order(created_at: :desc)
   end
 
   private
