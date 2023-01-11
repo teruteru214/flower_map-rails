@@ -21,11 +21,13 @@ class FlowersController < ApplicationController
 
   def show
     @flower = Flower.find(params[:id])
+    @comment = Comment.new
+    @comments = @flower.comments.includes(:user).order(created_at: :desc)
   end
 
   private
 
   def flower_params
-    params.require(:flower).permit(:name, :address, :datetime,:status, :flower_image, :flower_image_cache)
+    params.require(:flower).permit(:name, :address, :datetime,:status, :flower_image, :flower_image_cache, :latitude, :longitude)
   end
 end
