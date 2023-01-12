@@ -21,6 +21,10 @@
         <span class="label-text">花の状態</span>
       </label>
       <%= @flower.status %>
+      <div class="flex my-4">
+        <%= render 'comments/form', { board: @flower, comment: @comment } %>
+        <%= render 'comments/comments', { comments: @comments } %>
+      </div>
     </div>
   </div>
 </div>
