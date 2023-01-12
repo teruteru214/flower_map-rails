@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'user_sessions#destroy'
 
   resources :users, only: %i[new create]
-  resources :flowers, only: %i[index new create show] do
+  resources :flowers do
     resources :comments, only: %i[create], shallow: true
   end
 end
