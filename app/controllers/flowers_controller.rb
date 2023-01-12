@@ -29,7 +29,7 @@ class FlowersController < ApplicationController
   def edit; end
 
   def update
-    if @board.update(flower_params)
+    if @flower.update(flower_params)
       redirect_to @flower, success: '編集が完了しました！'
     else
       flash.now['danger'] = '編集が失敗しました'
