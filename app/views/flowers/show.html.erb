@@ -22,10 +22,8 @@
       </label>
       <%= @flower.status %>
       <div class="flex my-4">
-        <%= render 'comments/form', { flower: @flower, comment: @comment } %>
+        <%= render 'comments/form', { board: @flower, comment: @comment } %>
         <%= render 'comments/comments', { comments: @comments } %>
-        <p class='text-2xl text-center mt-4'>編集/削除</p>
-        <%= render 'crud_menus', flower: @flower if current_user.own?(@flower) %>
       </div>
     </div>
   </div>
