@@ -1,0 +1,26 @@
+<div id="comment-<%= comment.id %>">
+  <div class="chat chat-start flex">
+    <div class="chat-image avatar">
+      <div class="w-10 rounded-full">
+        <img src="https://placeimg.com/192/192/people" />
+      </div>
+    </div>
+    <div class="chat-bubble bg-yellow-500 text-white w-72">
+    <%= comment.body %>
+    <% if current_user.own?(comment) %>
+      <ul class='float-right flex m-1'>
+        <li>
+          <a href="#" class='js-edit-comment-button' data-comment-id="<%= comment.id %>">
+            <%= image_tag 'pen.png', size: '16x16' %>
+          </a>
+        </li>
+        <li>
+          <a href="#" class='js-delete-comment-button' data-comment-id="<%= comment.id %>">
+            <%= image_tag 'trash.png', size: '16x16' %>
+          </a>
+        </li>
+      </ul>
+    <% end %>
+    </div>
+  </div>
+</div>

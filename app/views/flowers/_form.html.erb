@@ -7,6 +7,18 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_CLOUD_API_KEY'] %>&callback=initMap" async defer></script>
 
 <%= form_with model: flower, local: true do |f| %>
+  <div class="form-control hidden">
+    <label class="label">
+      <span class="label-text">緯度</span>
+    </label>
+    <%= f.text_field :latitude, class: "input w-96" %>
+  </div>
+  <div class="form-control hidden">
+    <label class="label">
+      <span class="label-text">経度</span>
+    </label>
+    <%= f.text_field :longitude, class: "input w-96" %>
+  </div>
   <div class="form-control">
     <label class="label">
       <span class="label-text">住所</span>
@@ -32,7 +44,7 @@
     <div class="rating rating-lg">
       <%= f.radio_button :status, :bad, class: "mask mask-star-2 bg-orange-400" %>
       <%= f.radio_button :status, :rather_bad, class: "mask mask-star-2 bg-orange-400" %>
-      <%= f.radio_button :status, :usually, class: "mask mask-star-2 bg-orange-400" %>
+      <%= f.radio_button :status, :usually, class: "mask mask-star-2 bg-orange-400", checked: true %>
       <%= f.radio_button :status, :good, class: "mask mask-star-2 bg-orange-400" %>
       <%= f.radio_button :status, :beautiful, class: "mask mask-star-2 bg-orange-400" %>
     </div>

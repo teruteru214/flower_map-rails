@@ -1,0 +1,12 @@
+<label for="my-modal-3" class="btn btn-accent text-white">新しくコメントを記入</label>
+<input type="checkbox" id="my-modal-3" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box relative">
+    <label for="my-modal-3" class="btn btn-sm btn-circle btn-outline absolute right-2 top-2">✕</label>
+      <%= form_with model: @comment, url: [@flower, @comment], local: true, class: 'flex' do |f| %>
+        <%= f.text_area :body, class: 'textarea textarea-accent w-96', placeholder: "コメントを記入しよう！" %>
+        <%= f.submit "投稿", class: 'btn btn-accent btn-sm mt-11 ml-1' %>
+      <% end %>
+    </div>
+  </div>
+</div>
