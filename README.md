@@ -67,7 +67,7 @@
 
 ## ER 図
 
-[![Image from Gyazo](https://i.gyazo.com/b2159e19499c44e9fb2dc84bc584f407.png)](https://gyazo.com/b2159e19499c44e9fb2dc84bc584f407)
+[![Image from Gyazo](https://i.gyazo.com/bc1162851f5d36e5af53cfda976a271e.png)](https://gyazo.com/bc1162851f5d36e5af53cfda976a271e)
 
 ## スケジュール
 
@@ -75,8 +75,8 @@
 <br>
 README~ER 図作成:11/15 〆切
 <br>
-メイン機能実装:11/15 - 12/25 〆切
+メイン機能実装:11/15 - 1/27 〆切
 <br>
-β 版を RUNTEQ 内でリリース:12/25 〆切
+β 版を RUNTEQ 内でリリース:1/27 〆切
 <br>
-本番リリース:12 月末
+本番リリース: 1 月末
