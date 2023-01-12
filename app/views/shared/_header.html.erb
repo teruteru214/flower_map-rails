@@ -15,7 +15,7 @@
       <%= link_to '#' do %>
         <%= image_tag 'mypage.png', width: '50%', height: '50%' %>
       <% end %>
-      <%= link_to logout_path do %>
+      <%= button_to logout_path, method: :delete do %>
         <%= image_tag 'logout.png', width: '50%', height: '50%' %>
       <% end %>
     </div>
