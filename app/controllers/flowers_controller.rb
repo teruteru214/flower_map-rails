@@ -41,6 +41,10 @@ class FlowersController < ApplicationController
     @flower.destroy!
     redirect_to flowers_path, success: '削除が完了しました！'
   end
+
+  def favotites
+    @favorite_flowers = current_user.favorite_flowers.includes(:user).order(created_at: :desc)
+  end
   private
 
   def flower_params
