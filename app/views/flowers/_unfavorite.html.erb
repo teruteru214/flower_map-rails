@@ -1,0 +1,3 @@
+<%= button_to favorite_path(current_user.favorites.find_by(flower_id: flower.id)), id: "js-favorite-button-for-flower-#{flower.id}", class: 'm-4', method: :delete do %>
+  <%= image_tag 'heart.png', size: '32x32' %>
+<% end %>
