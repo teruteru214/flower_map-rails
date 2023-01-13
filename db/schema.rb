@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_10_024951) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_13_003123) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_024951) do
     t.datetime "updated_at", null: false
     t.index ["flower_id"], name: "index_comments_on_flower_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "flower_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flower_id"], name: "index_favorites_on_flower_id"
+    t.index ["user_id", "flower_id"], name: "index_favorites_on_user_id_and_flower_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "flowers", force: :cascade do |t|
@@ -52,5 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_024951) do
 
   add_foreign_key "comments", "flowers"
   add_foreign_key "comments", "users"
+  add_foreign_key "favorites", "flowers"
+  add_foreign_key "favorites", "users"
   add_foreign_key "flowers", "users"
 end

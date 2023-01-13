@@ -2,6 +2,7 @@ class Flower < ApplicationRecord
   mount_uploader :flower_image, FlowerImageUploader
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :address, presence: true, length: { maximum: 150 }
