@@ -12,7 +12,11 @@
           <%= link_to "詳細画面へ", flower_path(flower), class: "btn btn-success" %>
         </div>
         <div class="mt-48">
-          <%= render 'crud_menus', flower: flower if current_user.own?(flower) %>
+          <% if current_user.own?(flower) %>
+            <%= render 'crud_menus', flower: flower %>
+          <% else %>
+            <%= render 'favorite_button', flower: flower  %>
+          <% end %>
         </div>
       </div>
     </div>
