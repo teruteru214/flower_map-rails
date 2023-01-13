@@ -1,7 +1,13 @@
 class FavoritesController < ApplicationController
   def create
-    @flower_favorite = Favorite.new(user_id: current_user.id, flower_id: params[:flower_id])
-    @flower_favorite.save
+    flower = Flower.find(params[:flower_id])
+    current_user.favorite(flower)
+    redirect_back fallback_location: root_path, success: 'お気に入りを登録しました！'
   end
 
+  def destroy
+    flower = current_user.favorites.find(params[:id]).flower
+    current_user.unfavorite(flower)
+    redirect_back fallback_location: root_path, success: 'お気に入り解除しました'
+  end
 end
