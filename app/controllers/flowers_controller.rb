@@ -3,7 +3,7 @@ class FlowersController < ApplicationController
   before_action :find_flower, only: %i[edit update destroy]
 
   def index
-    @flowers = Flower.all.includes(:user).order(created_at: :desc)
+    @flowers = Flower.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -43,7 +43,7 @@ class FlowersController < ApplicationController
   end
 
   def favotites
-    @favorite_flowers = current_user.favorite_flowers.includes(:user).order(created_at: :desc)
+    @favorite_flowers = current_user.favorite_flowers.includes(:user).order(created_at: :desc).page(params[:page])
   end
   private
 
