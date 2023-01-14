@@ -89,3 +89,6 @@ gem 'mini_magick'
 
 # google_map_api_enviroment
 gem 'dotenv-rails'
+
+# pagination
+gem 'kaminari'
