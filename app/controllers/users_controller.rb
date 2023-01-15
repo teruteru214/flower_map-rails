@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, success: "ユーザー作成が完了しました！"
+      redirect_to login_path, success: t('.success')
     else
-      flash.now[:danger] = "ユーザ作成失敗しました。入力項目が不足しています。"
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end

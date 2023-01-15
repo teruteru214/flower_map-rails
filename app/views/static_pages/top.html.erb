@@ -2,11 +2,11 @@
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
     <div class="max-w-md">
-      <h1 class="mb-5 text-3xl font-medium">見つけた花を共有する</h1>
-      <p>FlowerMapは道端で見つけた花の位置を記録、</p>
-      <p>共有するアプリです。</p>
+      <h1 class="mb-5 text-3xl font-medium"><%= t '.theme' %></h1>
+      <p><%= t '.description' %></p>
+      <p><%= t '.description2' %></p>
       <% if !logged_in? %>
-        <%= link_to "ログインする", login_path , class: "btn btn btn-accent bg-green-600 border-green-600 hover:bg-green-500 text-sm text-white font-bold"%>
+        <%= link_to (t 'defaults.login'), login_path, class: "btn btn btn-accent text-white font-bold"%>
       <% end %>
     </div>
   </div>

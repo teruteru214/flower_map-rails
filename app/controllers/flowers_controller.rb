@@ -13,9 +13,9 @@ class FlowersController < ApplicationController
   def create
     @flower = current_user.flowers.build(flower_params)
     if @flower.save
-      redirect_to flowers_path, success: "投稿完了しました！"
+      redirect_to flowers_path, success: t('.success')
     else
-      flash.now['danger'] = "投稿が失敗しました。不足している項目があります"
+      flash.now['danger'] = t('.fail')
       render :new
     end
   end
@@ -30,16 +30,16 @@ class FlowersController < ApplicationController
 
   def update
     if @flower.update(flower_params)
-      redirect_to @flower, success: '編集が完了しました！'
+      redirect_to @flower, success: t('.success')
     else
-      flash.now['danger'] = '編集が失敗しました'
+      flash.now['danger'] = t('.fail')
       render :edit
     end
   end
 
   def destroy
     @flower.destroy!
-    redirect_to flowers_path, success: '削除が完了しました！'
+    redirect_to flowers_path, success: t('.success')
   end
 
   def favotites

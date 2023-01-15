@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+      flower: "花"
+    attributes:
+      user:
+        name: "ユーザー名"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+      flower:
+        latitude: "緯度"
+        longitude: "経度"
+        address: "住所"
+        datetime: "日付"
+        name: "花の名前"
+        status: "花の状態"
+        flower_image: "花の写真"
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
+  helpers:
+    submit:
+      create: "%{model}を登録する"
+      update: "%{model}を更新する"
