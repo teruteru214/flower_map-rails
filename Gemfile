@@ -92,3 +92,6 @@ gem 'dotenv-rails'
 
 # pagination
 gem 'kaminari'
+
+# Japanese Language
+gem 'rails-i18n'
