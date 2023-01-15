@@ -52,3 +52,12 @@ ja:
       fail: "編集が失敗しました。不足している項目があります"
     destroy:
       success: "削除が完了しました"
+  comments:
+    create:
+      success: "コメント投稿完了しました！"
+      fail: "コメント投稿失敗しました"
+  favorites:
+    create:
+      success: "お気に入りを登録しました！"
+    destroy:
+      success: "お気に入り解除しました"
