@@ -22,5 +22,10 @@ ja:
     updated_at: 更新日
   helpers:
     submit:
-      create: "%{model}を登録する"
-      update: "%{model}を更新する"
+      create: "見つけた%{model}を登録する"
+      update: "更新する"
+    placeholder:
+      flower:
+        address: "東京駅"
+        calender: "左のカレンダーから入力しよう！"
+        dummy_flower: "ヒマワリ"

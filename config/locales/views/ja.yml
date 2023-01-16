@@ -6,6 +6,14 @@ ja:
     privacy_policy: "プライバシーポリシー"
     contact_us: "お問い合わせ"
     copy_right: "Copyright © 2023 - All right reserved by Teruyoshi Tsuchiya"
+    post_flower: "見つけた花を投稿する"
+    search: "検索"
+    comment_index: "コメント欄"
+    comment: "コメントする"
+    location: "見つけた場所"
+    time: "見つけた時間"
+    detail_screen: "詳細画面"
+    status: "状態"
   static_pages:
     top:
       theme: "見つけた花を共有する"
@@ -52,3 +60,12 @@ ja:
       fail: "編集が失敗しました。不足している項目があります"
     destroy:
       success: "削除が完了しました"
+  comments:
+    create:
+      success: "コメント投稿完了しました！"
+      fail: "コメント投稿失敗しました"
+  favorites:
+    create:
+      success: "お気に入りを登録しました！"
+    destroy:
+      success: "お気に入り解除しました"
