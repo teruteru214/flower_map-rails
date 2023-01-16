@@ -69,3 +69,7 @@ ja:
       success: "お気に入りを登録しました！"
     destroy:
       success: "お気に入り解除しました"
+  profiles:
+    update:
+      success: "ユーザーを更新しました"
+      fail: "ユーザーを更新できませんでした"
