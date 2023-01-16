@@ -14,6 +14,7 @@ ja:
     time: "見つけた時間"
     detail_screen: "詳細画面"
     status: "状態"
+    edit: "編集"
   static_pages:
     top:
       theme: "見つけた花を共有する"
@@ -73,3 +74,5 @@ ja:
     update:
       success: "ユーザーを更新しました"
       fail: "ユーザーを更新できませんでした"
+    edit:
+      title: "プロフィール編集"

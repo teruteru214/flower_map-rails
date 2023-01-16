@@ -1,0 +1,20 @@
+<div class="hero min-h-screen bg-base-200">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
+      <div class="flex-1">
+        <div class="w-24 h-24 rounded-full">
+          <%= image_tag current_user.avatar.url, class: 'w-24 h-24 rounded-full', size: '80x80' %>
+        </div>
+        <div class="flex-1 justify-center">
+          <h2 class="card-title"><%= current_user.name %></h2>
+          <p><%= current_user.email %></p>
+          <%= link_to edit_profile_path do %>
+            <div class="btn btn-active btn-accent btn-sm text-center text-white">
+              <%= t('defaults.edit') %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
