@@ -7,9 +7,13 @@
         </figure>
         <div class="card-body items-center text-center">
           <h2 class="card-title"><%= flower.name %></h2>
-          <p>場所: <%= flower.address %></p>
-          <p>時間: <%= l flower.datetime %></p>
-          <%= link_to "詳細画面へ", flower_path(flower), class: "btn btn-success" %>
+          <h3 class="font-bold"><%= t 'defaults.location' %></h3>
+          <p><%= flower.address %></p>
+          <h3 class="font-bold"><%= t 'defaults.time' %></h3>
+          <p><%= l flower.datetime %></p>
+          <h3 class="font-bold"><%= t 'defaults.status' %></h3>
+          <p><%= flower.status %></p>
+          <%= link_to (t 'defaults.detail_screen'), flower_path(flower), class: "btn btn-success" %>
         </div>
         <div class="mt-48">
           <% if current_user.own?(flower) %>
