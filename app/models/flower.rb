@@ -3,10 +3,10 @@ class Flower < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :flower_word
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :address, presence: true, length: { maximum: 150 }
+  validates :datetime, presence: true
 
   enum status: { bad: 0, rather_bad: 1, usually: 2, good: 3, beautiful: 4 }
 end

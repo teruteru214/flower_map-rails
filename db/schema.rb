@@ -46,8 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_052424) do
     t.string "name", null: false
     t.datetime "datetime", null: false
     t.integer "status", null: false
-    t.string "flower_word"
-    t.string "birth_flower_day"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
