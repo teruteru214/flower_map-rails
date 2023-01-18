@@ -3,9 +3,7 @@ class CreateFlowers < ActiveRecord::Migration[7.0]
     create_table :flowers do |t|
       t.string :name, null: false
       t.datetime :datetime, null: false
-      t.integer :status, null: false, defalut: 0
-      t.string :flower_word
-      t.string :birth_flower_day
+      t.integer :status, null: false, defalut: 2
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
