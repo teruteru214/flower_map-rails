@@ -35,7 +35,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_052424) do
   end
 
   create_table "flower_words", force: :cascade do |t|
-    t.integer "flower_id", null: false
     t.string "name"
     t.string "word"
     t.datetime "created_at", null: false
