@@ -15,6 +15,6 @@ end
       status: 2,
       latitude: 35.7100069,
       longitude: 139.8108103,
-      address: '東京スカイツリー'
+      address: '〒131-0045 東京都墨田区押上１丁目１−２'
   )
 end
