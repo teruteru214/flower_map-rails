@@ -22,11 +22,14 @@ class FlowersController < ApplicationController
 
   def show
     @flower = Flower.find(params[:id])
+    gon.flower = @flower
     @comment = Comment.new
     @comments = @flower.comments.includes(:user).order(created_at: :desc)
   end
 
-  def edit; end
+  def edit
+    gon.flower = @flower
+  end
 
   def update
     if @flower.update(flower_params)
