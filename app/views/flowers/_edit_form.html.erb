@@ -1,0 +1,63 @@
+<input id="address" type="text" class="input input-bordered input-sm w-full max-w-xs text-left mb-1">
+<input type="button" class="btn btn-active btn-accent btn-sm text-white", value=<%= t 'defaults.search' %> , onclick="codeAddress()">
+<div id='map' style="height: 500px; width: 380px" onclick="touchAddress()"></div>
+
+<%= form_with model: flower, local: true do |f| %>
+  <div class="form-control hidden">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude, class: "input w-96" %>
+  </div>
+  <div class="form-control hidden">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude, class: "input w-96" %>
+  </div>
+  <div class="form-control">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "input w-96" %>
+  </div>
+  <div class="form-control">
+    <%= f.label :datetime %>
+    <%= f.datetime_field :datetime, class: "input w-96" %>
+  </div>
+  <div class="form-control">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "input w-96" %>
+  </div>
+  <div class="form-control">
+    <%= f.label :status %>
+    <div class="rating rating-lg">
+      <%= f.radio_button :status, :bad, class: "mask mask-star-2 bg-orange-400" %>
+      <%= f.radio_button :status, :rather_bad, class: "mask mask-star-2 bg-orange-400" %>
+      <%= f.radio_button :status, :usually, class: "mask mask-star-2 bg-orange-400", checked: true %>
+      <%= f.radio_button :status, :good, class: "mask mask-star-2 bg-orange-400" %>
+      <%= f.radio_button :status, :beautiful, class: "mask mask-star-2 bg-orange-400" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :flower_image %>
+    <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input file-input-bordered file-input-accent w-96" %>
+    <%= f.hidden_field :flower_image_cache %>
+    <%= image_tag flower.flower_image_url, size: '380x380', id: 'preview', class: "mt-5" %>
+    <%= javascript_include_tag 'image' %>
+  </div>
+  <%= f.submit class: "btn btn-active btn-accent text-white mt-5" %>
+<% end %>
+
+<script>
+  let map
+  let Marker
+
+  function initMap(){
+    const FlowerLocation = { lat: gon.flower.latitude, lng: gon.flower.longitude }
+
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center: FlowerLocation,
+      zoom: 16,
+    })
+    const marker = new google.maps.Marker({
+      position: FlowerLocation,
+      map: map
+    })
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_CLOUD_API_KEY'] %>&callback=initMap" async defer></script>
