@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
 
+  get '/privacy', to: 'static_pages#privacy'
+  get '/teams', to: 'static_pages#teams'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
