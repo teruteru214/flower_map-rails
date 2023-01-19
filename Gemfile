@@ -95,3 +95,6 @@ gem 'kaminari'
 
 # Japanese Language
 gem 'rails-i18n'
+
+# Rails and javascript integration
+gem 'gon'
