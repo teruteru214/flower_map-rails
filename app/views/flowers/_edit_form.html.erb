@@ -45,15 +45,31 @@
 
 <script>
 let map
-let geocoder
 let Marker
 
 function initMap(){
-  geocoder = new google.maps.Geocoder()
+  const FlowerLocation = { lat: gon.flower.latitude, lng: gon.flower.longitude }
+  geocoder = new google.maps.Geocoder();
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center:  {lat: 35.6803997, lng:139.7690174},  //東京駅
+    center: FlowerLocation,
     zoom: 16,
+  })
+  let marker = new google.maps.Marker({
+    position: FlowerLocation,
+    map: map
+  })
+}
+
+let geocoder
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
   });
 }
 
@@ -67,6 +83,7 @@ function touchAddress(){
     });
     geocode();
   })
+  //ジオコーディング
   function geocode(){  var geocoder = new google.maps.Geocoder();
     geocoder.geocode({ 'location': Marker.getPosition()},
       function(results, status) {
@@ -82,17 +99,6 @@ function touchAddress(){
     }
     });
   }
-}
-
-function codeAddress(){
-  let inputAddress = document.getElementById('address').value;
-    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-    } else {
-      alert('該当する結果がありませんでした：' + status);
-    }
-  });
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_CLOUD_API_KEY'] %>&callback=initMap" async defer></script>
