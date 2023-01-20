@@ -57,7 +57,8 @@ function initMap(){
   })
   let marker = new google.maps.Marker({
     position: FlowerLocation,
-    map: map
+    map: map,
+    icon: '/assets/marker.png'
   })
 }
 
@@ -91,11 +92,6 @@ function touchAddress(){
       document.getElementById('flower_address').value = results[0].formatted_address.replace(/^日本, /, '');
       document.getElementById('flower_latitude').value = results[0].geometry.location.lat();
       document.getElementById('flower_longitude').value = results[0].geometry.location.lng();
-    }else{
-      document.getElementById('flower_address').value =
-        "Geocode 取得に失敗しました";
-      alert("Geocode 取得に失敗しました reason: "
-            + status);
     }
     });
   }
