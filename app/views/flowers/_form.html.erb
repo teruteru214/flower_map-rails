@@ -63,7 +63,8 @@ function touchAddress(){
     if (Marker){Marker.setMap(null)};
     Marker = new google.maps.Marker({
     position: event.latLng,
-    map: map
+    map: map,
+    icon: '/assets/marker.png'
     });
     geocode();
   })
