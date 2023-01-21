@@ -10,14 +10,9 @@
     <% if current_user.own?(comment) %>
       <ul class='float-right flex m-1'>
         <li>
-          <a href="#" class='js-edit-comment-button' data-comment-id="<%= comment.id %>">
-            <%= image_tag 'pen.png', size: '16x16' %>
-          </a>
-        </li>
-        <li>
-          <a href="#" class='js-delete-comment-button' data-comment-id="<%= comment.id %>">
+          <%= button_to comment_path(comment), method: :delete do %>
             <%= image_tag 'trash.png', size: '16x16' %>
-          </a>
+          <% end %>
         </li>
       </ul>
     <% end %>

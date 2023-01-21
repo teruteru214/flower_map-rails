@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :require_login
-
   def create
     @comment = current_user.comments.build(comment_params)
     if @comment.save
@@ -8,6 +6,12 @@ class CommentsController < ApplicationController
     else
       redirect_to flower_path(@comment.flower), danger: t('.fail')
     end
+  end
+
+  def destroy
+    @comment = current_user.comments.find(params[:id])
+    @comment.destroy!
+    redirect_back fallback_location: flower_path, success: t('.success')
   end
 
   private

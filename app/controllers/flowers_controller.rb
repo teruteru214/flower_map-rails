@@ -1,5 +1,4 @@
 class FlowersController < ApplicationController
-  before_action :require_login
   before_action :find_flower, only: %i[edit update destroy]
 
   def index
