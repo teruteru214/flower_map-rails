@@ -98,3 +98,6 @@ gem 'rails-i18n'
 
 # Rails and javascript integration
 gem 'gon'
+
+# enum_view
+gem 'enum_help'
