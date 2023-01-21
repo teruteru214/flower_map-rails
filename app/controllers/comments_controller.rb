@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = current_user.comments.find(params[:id])
     @comment.destroy!
-    redirect_back fallback_location: flowers_path, success: t('.success')
+    redirect_back fallback_location: flower_path, success: t('.success')
   end
 
   private

@@ -65,6 +65,8 @@ ja:
     create:
       success: "コメント投稿完了しました！"
       fail: "コメント投稿失敗しました"
+    destroy:
+      success: "コメントを削除しました！"
   favorites:
     create:
       success: "お気に入りを登録しました！"
