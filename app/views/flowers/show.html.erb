@@ -18,7 +18,7 @@
       <label class="label">
         <span class="label-text"><%= t '.status' %></span>
       </label>
-      <%= @flower.status %>
+      <%= @flower.status_i18n %>
       <div class="flex my-4">
         <%= render 'comments/form', { flower: @flower, comment: @comment } %>
         <%= render 'comments/comments', { comments: @comments } %>
