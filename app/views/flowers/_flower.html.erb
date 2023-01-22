@@ -12,7 +12,7 @@
           <h3 class="font-bold"><%= t 'defaults.time' %></h3>
           <p><%= l flower.datetime %></p>
           <h3 class="font-bold"><%= t 'defaults.status' %></h3>
-          <p><%= flower.status %></p>
+          <p><%= flower.status_i18n %></p>
           <%= link_to (t 'defaults.detail_screen'), flower_path(flower), class: "btn btn-success" %>
         </div>
         <div class="mt-48">

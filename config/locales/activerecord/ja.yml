@@ -30,3 +30,11 @@ ja:
         address: "東京駅"
         calender: "左のカレンダーから入力しよう！"
         dummy_flower: "ヒマワリ"
+  enums:
+    flower:
+      status:
+        bad: "⭐☆☆☆☆"
+        rather_bad: "⭐⭐☆☆☆"
+        usually: "⭐⭐⭐☆☆"
+        good: "⭐⭐⭐⭐☆"
+        beautiful: "⭐⭐⭐⭐⭐"
