@@ -6,8 +6,13 @@
     <% else %>
       <p><%= t '.not_posted' %></p>
     <% end %>
-    <div class="flex justify-center">
-      <%= paginate @flowers, theme: 'flower' %>
+    <div class="flex justify-center ml-11">
+      <div class="hidden md:block">
+        <%= paginate @flowers, theme: 'flower' %>
+      </div>
+      <div class="md:hidden">
+        <%= paginate @flowers, theme: 'smartphone' %>
+      </div>
     </div>
   </div>
 </div>
