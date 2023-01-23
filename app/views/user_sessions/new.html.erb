@@ -1,7 +1,7 @@
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
-      <h1 class="text-3xl font-bold"><%= t '.title' %></h1>
+      <h1 class="text-3xl font-bold text-primary"><%= t '.title' %></h1>
     </div>
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <%= form_with model: @user, class: 'card-body' do |f|%>
@@ -20,7 +20,7 @@
           </label>
         </div>
         <div class="form-control mt-6">
-          <%= f.submit (t 'defaults.login'), class: "btn btn-success bg-green-600 hover:bg-green-600 text-white" %>
+          <%= f.submit (t 'defaults.login'), class: "btn btn-primary text-white" %>
         </div>
       <% end %>
     </div>
