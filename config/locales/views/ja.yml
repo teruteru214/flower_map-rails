@@ -20,6 +20,8 @@ ja:
     detail_screen: "詳細画面"
     status: "状態"
     edit: "編集"
+    gap: "..."
+    prev: "PREV"
   static_pages:
     top:
       theme: "見つけた花を地図に記録"

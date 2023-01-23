@@ -1,9 +1,9 @@
 <% if page.current? %>
   <li class="page current btn-group">
-    <%= link_to_if page.current?, page, url, {remote: remote, rel: page.rel, class: "btn btn-outline btn-accent" } %>
+    <%= link_to_if page.current?, page, url, {remote: remote, rel: page.rel, class: "btn btn-primary" } %>
   </li>
 <% else %>
   <li class="page btn-group">
-    <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: "btn btn-outline btn-accent" } %>
+    <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: "btn btn-primary" } %>
   </li>
 <% end %>
