@@ -7,22 +7,22 @@
     </div>
     <div class="hidden md:flex">
       <div class='items-stretch'>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip="post">
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.post_flower' %>>
           <%= link_to new_flower_path, class: 'flex justify-center' do %>
             <%= image_tag 'paper_airplane.png', width: '50%', height: '50%' %>
           <% end %>
         </div>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip="index">
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.flower_index' %>>
           <%= link_to flowers_path, class: 'flex justify-center' do %>
             <%= image_tag 'flower_index.png', width: '50%', height: '50%' %>
           <% end %>
         </div>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip="mypage">
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.mypage' %>>
           <%= link_to profile_path, class: 'flex justify-center' do %>
             <%= image_tag 'mypage.png', width: '50%', height: '50%' %>
           <% end %>
         </div>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip="logout">
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.logout' %>>
           <%= button_to logout_path, class: 'flex justify-center', method: :delete do %>
             <%= image_tag 'logout.png', width: '50%', height: '50%',
             class: 'mt-1'%>
