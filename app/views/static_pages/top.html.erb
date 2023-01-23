@@ -2,11 +2,16 @@
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
     <div class="max-w-md">
-      <h1 class="mb-5 text-3xl font-medium"><%= t '.theme' %></h1>
+      <div class="hidden sm:block">
+        <h1 class="mb-5 text-4xl font-bold"><%= t '.theme' %></h1>
+      </div>
+      <div class="sm:hidden">
+        <h1 class="mb-5 text-2xl font-bold"><%= t '.theme' %></h1>
+      </div>
       <p><%= t '.description' %></p>
       <p><%= t '.description2' %></p>
       <% if !logged_in? %>
-        <%= link_to (t 'defaults.login'), login_path, class: "btn btn btn-accent text-white font-bold"%>
+        <%= link_to (t 'defaults.login'), login_path, class: "btn btn-primary text-white font-bold mt-4"%>
       <% end %>
     </div>
   </div>

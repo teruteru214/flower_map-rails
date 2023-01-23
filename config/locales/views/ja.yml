@@ -22,7 +22,7 @@ ja:
     edit: "編集"
   static_pages:
     top:
-      theme: "見つけた花を共有する"
+      theme: "見つけた花を地図に記録"
       description: "FlowerMapは道端で見つけた花の位置を記録、"
       description2: "共有をします"
   users:
