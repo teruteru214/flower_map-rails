@@ -1,5 +1,7 @@
 ja:
   defaults:
+    new_user: "新規登録"
+    login_user: "ログイン"
     login: "ログインする"
     post: "見つけた花を投稿する"
     terms_of_use: "利用規約"
@@ -7,6 +9,9 @@ ja:
     contact_us: "お問い合わせ"
     copy_right: "Copyright © 2023 - All right reserved by Teruyoshi Tsuchiya"
     post_flower: "見つけた花を投稿する"
+    flower_index: "投稿された花を見る"
+    mypage: "マイページ"
+    logout: "ログアウト"
     search: "検索"
     comment_index: "コメント欄"
     comment: "コメントする"

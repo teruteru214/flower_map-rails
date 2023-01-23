@@ -1,17 +1,36 @@
-<header class = "bg-green-600">
-  <div class="navbar">
+<header>
+  <div class="navbar bg-green-700">
     <div class="flex-1">
       <%= link_to root_path do%>
         <%= image_tag 'flower-title.png' %>
       <% end %>
     </div>
-    <div class="flex-row lg:hidden">
-      <%= link_to new_user_path do %>
-        <%= image_tag 'new_user.png', width: '50%', height: '50%' %>
-      <% end %>
-      <%= link_to login_path do %>
-        <%= image_tag 'login.png', width: '50%', height: '50%' %>
-      <% end %>
+    <div class="hidden md:flex">
+      <div class='items-stretch'>
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.new_user' %>>
+          <%= link_to new_user_path, class: "flex justify-center" do %>
+            <%= image_tag 'new_user.png', width: '50%', height: '50%' %>
+          <% end %>
+        </div>
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.login_user' %>>
+          <%= link_to login_path, class: "flex justify-center" do %>
+            <%= image_tag 'login.png', width: '50%', height: '50%' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="md:hidden">
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost m-1 text-white">Menu</label>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+          <li>
+            <%= link_to (t 'defaults.new_user'), new_user_path %>
+          </li>
+          <li>
+            <%= link_to (t 'defaults.login_user'), login_path %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

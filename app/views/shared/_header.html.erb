@@ -1,23 +1,53 @@
-<header class = "bg-green-600">
-  <div class="navbar">
+<header>
+  <div class="navbar bg-green-700">
     <div class="flex-1">
       <%= link_to root_path do %>
         <%= image_tag 'flower-title.png' %>
       <% end %>
     </div>
-    <div class="hidden lg:flex">
-      <%= link_to new_flower_path do %>
-        <%= image_tag 'paper_airplane.png', width: '50%', height: '50%' %>
-      <% end %>
-      <%= link_to flowers_path do %>
-        <%= image_tag 'flower_index.png', width: '50%', height: '50%' %>
-      <% end %>
-      <%= link_to profile_path do %>
-        <%= image_tag 'mypage.png', width: '50%', height: '50%' %>
-      <% end %>
-      <%= button_to logout_path, method: :delete do %>
-        <%= image_tag 'logout.png', width: '50%', height: '50%' %>
-      <% end %>
+    <div class="hidden md:flex">
+      <div class='items-stretch'>
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip="post">
+          <%= link_to new_flower_path, class: 'flex justify-center' do %>
+            <%= image_tag 'paper_airplane.png', width: '50%', height: '50%' %>
+          <% end %>
+        </div>
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip="index">
+          <%= link_to flowers_path, class: 'flex justify-center' do %>
+            <%= image_tag 'flower_index.png', width: '50%', height: '50%' %>
+          <% end %>
+        </div>
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip="mypage">
+          <%= link_to profile_path, class: 'flex justify-center' do %>
+            <%= image_tag 'mypage.png', width: '50%', height: '50%' %>
+          <% end %>
+        </div>
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip="logout">
+          <%= button_to logout_path, class: 'flex justify-center', method: :delete do %>
+            <%= image_tag 'logout.png', width: '50%', height: '50%',
+            class: 'mt-1'%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="md:hidden">
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost m-1 text-white">Menu</label>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+          <li>
+            <%= link_to (t 'defaults.post'), new_flower_path %>
+          </li>
+          <li>
+            <%= link_to (t 'defaults.flower_index'), flowers_path %>
+          </li>
+          <li>
+            <%= link_to (t 'defaults.mypage'), profile_path %>
+          </li>
+          <li>
+            <%= link_to (t 'defaults.logout'), logout_path %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
