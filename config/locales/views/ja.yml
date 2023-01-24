@@ -17,11 +17,14 @@ ja:
     comment: "コメントする"
     location: "見つけた場所"
     time: "見つけた時間"
-    detail_screen: "詳細画面"
+    detail_screen: "場所を地図で確認"
     status: "状態"
     edit: "編集"
     gap: "..."
     prev: "PREV"
+    delete: "削除"
+    favorite: "お気に入り登録"
+    unfavorite: "お気に入り解除"
   static_pages:
     top:
       theme: "見つけた花を地図に記録"
@@ -47,7 +50,7 @@ ja:
       success: "ログアウトしました"
   flowers:
     index:
-      title: "投稿された花一覧"
+      title: "各地の花々"
       not_posted: "投稿されていません。投稿しましょう！"
     new:
       title: "投稿画面"

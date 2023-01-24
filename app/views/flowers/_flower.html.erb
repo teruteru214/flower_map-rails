@@ -6,16 +6,16 @@
           <%= image_tag flower.flower_image_url, class: "rounded-xl" %>
         </figure>
         <div class="card-body items-center text-center">
-          <h2 class="card-title"><%= flower.name %></h2>
-          <h3 class="font-bold"><%= t 'defaults.location' %></h3>
+          <h2 class="text-4xl font-serif text-green-600 text-opacity-70"><%= flower.name %></h2>
+          <h3 class="font-serif font-bold"><%= t 'defaults.location' %></h3>
           <p><%= flower.address %></p>
-          <h3 class="font-bold"><%= t 'defaults.time' %></h3>
+          <h3 class="font-serif font-bold"><%= t 'defaults.time' %></h3>
           <p><%= l flower.datetime %></p>
-          <h3 class="font-bold"><%= t 'defaults.status' %></h3>
+          <h3 class="font-serif font-bold"><%= t 'defaults.status' %></h3>
           <p><%= flower.status_i18n %></p>
-          <%= link_to (t 'defaults.detail_screen'), flower_path(flower), class: "btn btn-success" %>
+          <%= link_to (t 'defaults.detail_screen'), flower_path(flower), class: "btn btn-primary" %>
         </div>
-        <div class="mt-48">
+        <div>
           <% if current_user.own?(flower) %>
             <%= render 'crud_menus', flower: flower %>
           <% else %>
