@@ -1,9 +1,12 @@
 <div id="comment-<%= comment.id %>">
   <div class="chat chat-start flex">
-    <div class="chat-image avatar">
-      <div class="w-12 h-12 rounded-full">
-        <%= image_tag comment.user.avatar_url %>
+    <div class="flex-col items-stretch">
+      <div class="chat-image avatar">
+        <div class="w-12 h-12 rounded-full">
+          <%= image_tag comment.user.avatar_url %>
+        </div>
       </div>
+      <p class="font-serif text-xs"><%= comment.user.name %></p>
     </div>
     <div class="chat-bubble bg-yellow-500 text-white w-72">
     <%= comment.body %>
