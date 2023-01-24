@@ -66,6 +66,9 @@ ja:
       name: "花の名前"
       datetime: "見つけた日付"
       status: "花の状態"
+      image: "花の写真"
+      edit: "編集する"
+      destroy: "削除する"
     update:
       success: "編集が完了しました！"
       fail: "編集が失敗しました。不足している項目があります"
