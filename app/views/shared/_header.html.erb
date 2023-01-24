@@ -44,7 +44,7 @@
             <%= link_to (t 'defaults.mypage'), profile_path %>
           </li>
           <li>
-            <%= link_to (t 'defaults.logout'), logout_path %>
+            <%= button_to (t 'defaults.logout'), logout_path, method: :delete %>
           </li>
         </ul>
       </div>
