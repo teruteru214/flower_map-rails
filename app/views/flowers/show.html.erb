@@ -4,8 +4,8 @@
       <h1 class="text-4xl font-serif font-bold p-10 text-center text-accent-focus"><%= t ".title" %></h1>
       <p class="text-3xl font-serif font-bold text-green-600 text-opacity-70"><%= @flower.name %></p>
       <%= image_tag @flower.flower_image_url, class: "rounded-xl w-96 h-96 mt-3" %>
-      <label class="label font-serif font-bold mt-3"><%= t '.address' %></label>
-      <p><%= @flower.address %></p>
+      <label class="label font-serif font-bold w-96 mt-3"><%= t '.address' %></label>
+      <p class="textarea textarea-ghost w-96 text-base"><%= @flower.address %></p>
       <div id='map' class="rounded-xl mt-3" style="height: 500px; width: 380px"></div>
       <label class="label font-serif font-bold mt-7"><%= t '.datetime' %></label>
       <p><%= l @flower.datetime %></p>
