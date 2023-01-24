@@ -1,16 +1,16 @@
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
-      <h1 class="text-3xl font-bold text-primary"><%= t '.title' %></h1>
+      <h1 class="text-3xl font-serif font-bold text-accent-focus"><%= t '.title' %></h1>
     </div>
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <%= form_with model: @user, class: 'card-body' do |f|%>
         <div class="form-control">
-          <%= f.label :email, User.human_attribute_name(:email) %>
+          <%= f.label :email, User.human_attribute_name(:email), class: "font-serif" %>
           <%= f.text_field :email, placeholder: "email", class: "input input-borderd border-opacity-20" %>
         </div>
         <div class="form-control">
-          <%= f.label :password, User.human_attribute_name(:password)  %>
+          <%= f.label :password, User.human_attribute_name(:password), class: "font-serif" %>
           <%= f.password_field :password, placeholder: "password", class: "input input-borderd border-opacity-20" %>
           <label class="label">
             <a href="#" class="label-text-alt link link-hover"><%= t '.password_forgotten' %></a>
@@ -20,7 +20,7 @@
           </label>
         </div>
         <div class="form-control mt-6">
-          <%= f.submit (t 'defaults.login'), class: "btn btn-primary text-white" %>
+          <%= f.submit (t 'defaults.login'), class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
