@@ -2,6 +2,11 @@
   <div class="hero-content">
     <div class="max-w-md">
       <h1 class="text-4xl font-serif font-bold p-10 text-center text-accent-focus"><%= t ".title" %></h1>
+      <label class="label font-serif font-bold w-96 mt-3"><%= t '.post_name' %></label>
+      <div class="flex mb-3">
+        <%= image_tag @flower.user.avatar.url, class: "rounded-full w-12 h-12" %>
+        <p class="mt-3 ml-4 text-serif"><%= @flower.user.name %></p>
+      </div>
       <p class="text-3xl font-serif font-bold text-green-600 text-opacity-70"><%= @flower.name %></p>
       <%= image_tag @flower.flower_image_url, class: "rounded-xl w-96 h-96 mt-3" %>
       <label class="label font-serif font-bold w-96 mt-3"><%= t '.address' %></label>

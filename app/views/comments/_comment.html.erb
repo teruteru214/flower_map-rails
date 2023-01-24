@@ -9,16 +9,16 @@
       <p class="font-serif text-xs"><%= comment.user.name %></p>
     </div>
     <div class="chat-bubble bg-yellow-500 text-white w-72">
-    <%= comment.body %>
-    <% if current_user.own?(comment) %>
-      <ul class='float-right flex m-1'>
-        <li>
-          <%= button_to comment_path(comment), method: :delete do %>
-            <%= image_tag 'trash.png', size: '16x16' %>
-          <% end %>
-        </li>
-      </ul>
-    <% end %>
+    <p><%= comment.body %></p>
+      <% if current_user.own?(comment) %>
+        <ul class='float-right flex mt-1'>
+          <li>
+            <%= button_to comment_path(comment), method: :delete do %>
+              <%= image_tag 'trash.png', size: '16x16' %>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>

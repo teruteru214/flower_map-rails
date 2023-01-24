@@ -25,6 +25,8 @@ ja:
     delete: "削除"
     favorite: "お気に入り登録"
     unfavorite: "お気に入り解除"
+    post_comment: "投稿"
+    placeholder_comment: "コメントは25文字まで!"
   static_pages:
     top:
       theme: "見つけた花を地図に記録"
@@ -63,7 +65,7 @@ ja:
     show:
       title: "詳細画面"
       address: "住所"
-      name: "花の名前"
+      post_name: "投稿者"
       datetime: "見つけた日付"
       status: "花の状態"
       image: "花の写真"
