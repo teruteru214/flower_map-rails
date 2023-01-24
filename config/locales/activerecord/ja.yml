@@ -23,7 +23,7 @@ ja:
     updated_at: 更新日
   helpers:
     submit:
-      create: "見つけた%{model}を登録する"
+      create: "見つけた%{model}を記録する"
       update: "更新する"
     placeholder:
       flower:
