@@ -1,21 +1,24 @@
 <div id="comment-<%= comment.id %>">
   <div class="chat chat-start flex">
-    <div class="chat-image avatar">
-      <div class="w-10 h-10 rounded-full">
-        <%= image_tag comment.user.avatar_url %>
+    <div class="flex-col items-stretch">
+      <div class="chat-image avatar">
+        <div class="w-8 h-8 rounded-full">
+          <%= image_tag comment.user.avatar_url %>
+        </div>
       </div>
+      <p class="font-serif text-xs"><%= comment.user.name %></p>
     </div>
     <div class="chat-bubble bg-yellow-500 text-white w-72">
-    <%= comment.body %>
-    <% if current_user.own?(comment) %>
-      <ul class='float-right flex m-1'>
-        <li>
-          <%= button_to comment_path(comment), method: :delete do %>
-            <%= image_tag 'trash.png', size: '16x16' %>
-          <% end %>
-        </li>
-      </ul>
-    <% end %>
+    <p><%= comment.body %></p>
+      <% if current_user.own?(comment) %>
+        <ul class='float-right flex mt-1'>
+          <li>
+            <%= button_to comment_path(comment), method: :delete do %>
+              <%= image_tag 'trash.png', size: '16x16' %>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>

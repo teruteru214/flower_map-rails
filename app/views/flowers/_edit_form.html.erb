@@ -1,30 +1,30 @@
-<input id="address" type="text" class="input input-bordered input-sm w-full max-w-xs text-left mb-1">
-<input type="button" class="btn btn-active btn-accent btn-sm text-white", value=<%= t 'defaults.search' %> , onclick="codeAddress()">
-<div id='map' style="height: 500px; width: 380px" onclick="touchAddress()"></div>
+<input id="address" type="text" class="input input-bordered input-sm sm:w-96 w-56 max-w-xs text-left mb-1">
+<input type="button" class="btn btn-primary btn-sm font-thin", value=<%= t 'defaults.search' %> , onclick="codeAddress()">
+<div id='map' class="rounded-xl sm:w-96 w-72 h-96" onclick="touchAddress()"></div>
 
 <%= form_with model: flower, local: true do |f| %>
   <div class="form-control hidden">
     <%= f.label :latitude %>
-    <%= f.text_field :latitude, class: "input w-96" %>
+    <%= f.text_field :latitude %>
   </div>
   <div class="form-control hidden">
     <%= f.label :longitude %>
-    <%= f.text_field :longitude, class: "input w-96" %>
+    <%= f.text_field :longitude %>
   </div>
   <div class="form-control">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: "input w-96" %>
+    <%= f.label :address, class: "font-serif font-bold mt-7" %>
+    <%= f.text_area :address, class: "textarea sm:w-96 w-72" %>
   </div>
-  <div class="form-control">
-    <%= f.label :datetime %>
-    <%= f.datetime_field :datetime, class: "input w-96" %>
+  <div class="form-control mt-3">
+    <%= f.label :datetime, class: "font-serif font-bold" %>
+    <%= f.datetime_field :datetime, class: "input sm:w-96 w-72" %>
   </div>
-  <div class="form-control">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "input w-96" %>
+  <div class="form-control mt-3">
+    <%= f.label :name, class: "font-serif font-bold" %>
+    <%= f.text_field :name, class: "input sm:w-96 w-72" %>
   </div>
-  <div class="form-control">
-    <%= f.label :status %>
+  <div class="form-control mt-3">
+    <%= f.label :status, class: "font-serif font-bold" %>
     <div class="rating rating-lg">
       <%= f.radio_button :status, :bad, class: "mask mask-star-2 bg-orange-400" %>
       <%= f.radio_button :status, :rather_bad, class: "mask mask-star-2 bg-orange-400" %>
@@ -33,14 +33,16 @@
       <%= f.radio_button :status, :beautiful, class: "mask mask-star-2 bg-orange-400" %>
     </div>
   </div>
-  <div class="form-group">
-    <%= f.label :flower_image %>
-    <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input file-input-bordered file-input-accent w-96" %>
+  <div class="form-group mt-3">
+    <%= f.label :flower_image, class: "font-serif font-bold" %>
+    <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input sm:w-96 w-72" %>
     <%= f.hidden_field :flower_image_cache %>
-    <%= image_tag flower.flower_image_url, size: '380x380', id: 'preview', class: "mt-5" %>
+    <%= image_tag flower.flower_image_url, id: 'preview', class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72 mt-5" %>
     <%= javascript_include_tag 'image' %>
   </div>
-  <%= f.submit class: "btn btn-active btn-accent text-white mt-5" %>
+  <div class="flex justify-center">
+    <%= f.submit class: "btn btn-primary font-light mt-5" %>
+  </div>
 <% end %>
 
 <script>

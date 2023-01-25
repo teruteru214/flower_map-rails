@@ -2,7 +2,7 @@ class FlowersController < ApplicationController
   before_action :find_flower, only: %i[edit update destroy]
 
   def index
-    @flowers = Flower.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @flowers = Flower.all.includes(:user).order(created_at: :desc).page(params[:page]).per(8)
   end
 
   def new

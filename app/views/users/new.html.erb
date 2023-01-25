@@ -1,31 +1,31 @@
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
-      <h1 class="text-3xl font-bold"><%= t '.title' %></h1>
+      <h1 class="text-3xl font-serif font-bold text-accent-focus"><%= t '.title' %></h1>
     </div>
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <%= form_with model: @user, class: "card-body", local: true do |f|%>
+      <%= form_with model: @user, class: "card-body", local: true do |f| %>
         <div class="form-control">
-          <%= f.label :name %>
+          <%= f.label :name, class: "font-serif" %>
           <%= f.text_field :name, placeholder: "username", class: "input input-borderd border-opacity-20" %>
         </div>
         <div class="form-control">
-          <%= f.label :email %>
+          <%= f.label :email, class: "font-serif" %>
           <%= f.text_field :email, placeholder: "email", class: "input input-borderd border-opacity-20" %>
         </div>
         <div class="form-control">
-          <%= f.label :password %>
+          <%= f.label :password, class: "font-serif" %>
           <%= f.password_field :password, placeholder: "password", class: "input input-borderd border-opacity-20" %>
         </div>
         <div class="form-control">
-          <%= f.label :password_confirmation %>
+          <%= f.label :password_confirmation, class: "font-serif" %>
           <%= f.password_field :password_confirmation, placeholder: "password_confirmation", class: "input input-borderd border-opacity-20" %>
           <label class="label">
             <a href="/login" class="label-text-alt link link-hover"><%= t '.account_created'%></a>
           </label>
         </div>
         <div class="form-control mt-6">
-          <%= f.submit (t '.register'), class: "btn btn-success bg-green-600 hover:bg-green-600 text-white" %>
+          <%= f.submit (t '.register'), class: "btn btn-primary font-light" %>
         </div>
       <% end %>
     </div>

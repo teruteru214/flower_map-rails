@@ -1,28 +1,32 @@
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content">
     <div class="max-w-md">
-      <h1 class="text-3xl font-bold p-10 text-center"><%= t ".title" %></h1>
-      <div id='map' style="height: 500px; width: 380px"></div>
-      <label class="label">
-        <span class="label-text"><%= t '.address' %></span>
-      </label>
-      <%= @flower.address %>
-      <label class="label">
-        <span class="label-text"><%= t '.name' %></span>
-      </label>
-      <%= @flower.name %>
-      <label class="label">
-        <span class="label-text"><%= t '.datetime' %></span>
-      </label>
-      <%= l @flower.datetime %>
-      <label class="label">
-        <span class="label-text"><%= t '.status' %></span>
-      </label>
-      <%= @flower.status_i18n %>
+      <h1 class="sm:text-4xl text-2xl font-serif font-bold  text-accent-focus py-10 ms:pr-0 pl-28"><%= t ".title" %></h1>
+      <label class="label font-serif font-bold w-72 mt-3"><%= t '.post_name' %></label>
+      <div class="flex mb-3">
+        <%= image_tag @flower.user.avatar.url, class: "rounded-full w-12 h-12" %>
+        <p class="mt-3 ml-4 text-serif"><%= @flower.user.name %></p>
+      </div>
+      <p class="text-3xl font-serif font-bold text-green-600 text-opacity-70"><%= @flower.name %></p>
+      <%= image_tag @flower.flower_image_url, class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72 mt-3" %>
+      <label class="label font-serif font-bold w-96 mt-3"><%= t '.address' %></label>
+      <p class="textarea textarea-ghost sm:w-96 w-72 text-base"><%= @flower.address %></p>
+      <div id='map' class="rounded-xl sm:w-96 sm:h-96 w-72 h-96 mt-3"></div>
+      <label class="label font-serif font-bold w-72 mt-7"><%= t '.datetime' %></label>
+      <p><%= l @flower.datetime %></p>
+      <label class="label font-serif font-bold mt-3"><%= t '.status' %></label>
+      <p><%= @flower.status_i18n %></p>
       <div class="flex my-4">
         <%= render 'comments/form', { flower: @flower, comment: @comment } %>
         <%= render 'comments/comments', { comments: @comments } %>
-        <%= render 'crud_menus', flower: @flower if current_user.own?(@flower) %>
+      <div class="flex my-7">
+          <% if current_user.own?(@flower) %>
+            <div class="flex">
+              <%= link_to t( '.edit' ),edit_flower_path(@flower), class: "btn btn-primary mr-1", id: "button-edit-#{@flower.id}" %>
+              <%= button_to t('.destroy'), flower_path(@flower), class: "btn btn-primary", id: "button-delete-#{@flower.id}", method: :delete, data: { confirm: '削除完了しました' } %>
+            </div>
+          <% end %>
+      </div>
       </div>
     </div>
   </div>

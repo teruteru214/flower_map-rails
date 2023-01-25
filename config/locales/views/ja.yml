@@ -1,5 +1,7 @@
 ja:
   defaults:
+    new_user: "新規登録"
+    login_user: "ログイン"
     login: "ログインする"
     post: "見つけた花を投稿する"
     terms_of_use: "利用規約"
@@ -7,17 +9,27 @@ ja:
     contact_us: "お問い合わせ"
     copy_right: "Copyright © 2023 - All right reserved by Teruyoshi Tsuchiya"
     post_flower: "見つけた花を投稿する"
+    flower_index: "投稿された花を見る"
+    mypage: "マイページ"
+    logout: "ログアウト"
     search: "検索"
     comment_index: "コメント欄"
     comment: "コメントする"
     location: "見つけた場所"
     time: "見つけた時間"
-    detail_screen: "詳細画面"
+    detail_screen: "場所を地図で確認"
     status: "状態"
     edit: "編集"
+    gap: "..."
+    prev: "PREV"
+    delete: "削除"
+    favorite: "お気に入り登録"
+    unfavorite: "お気に入り解除"
+    post_comment: "投稿"
+    placeholder_comment: "コメントは25文字まで!"
   static_pages:
     top:
-      theme: "見つけた花を共有する"
+      theme: "見つけた花を地図に記録"
       description: "FlowerMapは道端で見つけた花の位置を記録、"
       description2: "共有をします"
   users:
@@ -40,10 +52,10 @@ ja:
       success: "ログアウトしました"
   flowers:
     index:
-      title: "投稿された花一覧"
+      title: "各地の花々"
       not_posted: "投稿されていません。投稿しましょう！"
     new:
-      title: "投稿画面"
+      title: "見つけた花を投稿"
       post: "見つけた花を記録する"
     edit:
       title: "編集画面"
@@ -51,11 +63,14 @@ ja:
       success: "投稿が完了しました！"
       fail: "投稿が失敗しました。不足している項目があります"
     show:
-      title: "詳細画面"
+      title: "花の記録"
       address: "住所"
-      name: "花の名前"
+      post_name: "投稿者"
       datetime: "見つけた日付"
       status: "花の状態"
+      image: "花の写真"
+      edit: "編集する"
+      destroy: "削除する"
     update:
       success: "編集が完了しました！"
       fail: "編集が失敗しました。不足している項目があります"
