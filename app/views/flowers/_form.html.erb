@@ -1,6 +1,6 @@
-<input id="address" type="text" class="input input-bordered input-sm max-w-xs text-left sm:w-96 w-48 mb-1">
+<input id="address" type="text" class="input input-bordered input-sm max-w-xs text-left sm:w-96 w-56 mb-1">
 <input type="button" class="btn btn-primary btn-sm font-thin", value=<%= t 'defaults.search' %> , onclick="codeAddress()">
-<div id='map' class="rounded-xl sm:w-96 w-64 h-96" onclick="touchAddress()"></div>
+<div id='map' class="rounded-xl sm:w-96 w-72 h-96" onclick="touchAddress()"></div>
 
 <%= form_with model: flower, local: true do |f| %>
   <div class="form-control hidden">
@@ -13,15 +13,15 @@
   </div>
   <div class="form-control">
     <%= f.label :address, class: "font-serif font-bold mt-7" %>
-    <%= f.text_area :address, class: "textarea sm:w-96 w-64" %>
+    <%= f.text_area :address, class: "textarea sm:w-96 w-72" %>
   </div>
   <div class="form-control mt-3">
     <%= f.label :datetime, class: "font-serif font-bold" %>
-    <%= f.datetime_field :datetime, class: "input sm:w-96 w-64", placeholder: "日付を入力してください" %>
+    <%= f.datetime_field :datetime, class: "input sm:w-96 w-72", placeholder: "日付を入力してください" %>
   </div>
   <div class="form-control mt-3">
     <%= f.label :name, class: "font-serif font-bold" %>
-    <%= f.text_field :name, class: "input sm:w-96 w-64"%>
+    <%= f.text_field :name, class: "input sm:w-96 w-72"%>
   </div>
   <div class="form-control mt-3">
     <%= f.label :status, class: "font-serif font-bold" %>
@@ -35,9 +35,9 @@
   </div>
   <div class="form-group mt-3">
     <%= f.label :flower_image, class: "font-serif font-bold" %>
-    <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input sm:w-96 w-64" %>
+    <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input sm:w-96 w-72" %>
     <%= f.hidden_field :flower_image_cache %>
-    <%= image_tag flower.flower_image_url, id: 'preview', class: "rounded-xl sm:w-96 sm:h-96 w-64 h-64 mt-5" %>
+    <%= image_tag flower.flower_image_url, id: 'preview', class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72 mt-5" %>
     <%= javascript_include_tag 'image' %>
   </div>
   <div class="flex justify-center">
@@ -54,7 +54,7 @@ function initMap(){
   geocoder = new google.maps.Geocoder()
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center:  {lat: 35.6803997, lng:139.7690174},  //東京駅
+    center:  {lat: 35.6723997, lng:139.7690174},  //東京駅
     zoom: 16,
   });
 }
