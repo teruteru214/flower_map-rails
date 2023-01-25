@@ -2,12 +2,7 @@
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
     <div class="max-w-md">
-      <div class="hidden sm:block">
-        <h1 class="mb-5 text-4xl font-serif font-bold"><%= t '.theme' %></h1>
-      </div>
-      <div class="sm:hidden">
-        <h1 class="mb-5 text-2xl font-serif font-bold"><%= t '.theme' %></h1>
-      </div>
+      <h1 class="mb-5 sm:text-4xl text-2xl font-serif font-bold"><%= t '.theme' %></h1>
       <p class="font-serif"><%= t '.description' %></p>
       <p class="font-serif"><%= t '.description2' %></p>
       <% if !logged_in? %>
