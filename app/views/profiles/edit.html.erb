@@ -17,15 +17,14 @@
       <div class="pt-5 pb-3">
         <%= f.label :avatar, class: 'font-serif' %>
       </div>
-      <%= f.file_field :avatar, class: 'file-input file-input-bordered file-input-accent w-full max-w-xs',
-       onchange: 'previewImage()', accept: 'image/*' %>
+      <%= f.file_field :avatar, class: 'file-input w-full max-w-xs',
+      onchange: 'previewImage()', accept: 'image/*' %>
       <%= f.hidden_field :avatar_cache %>
     </div>
     <div class="my-4">
       <%= image_tag @user.avatar.url,
                     class: 'w-24 h-24 rounded-full',
-                    id: 'preview',
-                    size: '100x100'%>
+                    id: 'preview'%>
       <%= javascript_include_tag 'image' %>
     </div>
     <div class="my-8 flex justify-center">
