@@ -1,14 +1,14 @@
 <div class="flower-content m-5">
   <div id="flower-id-<%= flower.id %>">
     <div class="card w-full bg-base-100 shadow-xl">
-      <div class="flex">
-        <figure class="p-10">
-          <%= image_tag flower.flower_image_url, class: "rounded-xl" %>
+      <div class="sm:flex">
+        <figure class="m-5">
+          <%= image_tag flower.flower_image_url, class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72" %>
         </figure>
         <div class="card-body items-center text-center">
           <h2 class="text-4xl font-serif text-green-600 text-opacity-70"><%= flower.name %></h2>
           <h3 class="font-serif font-bold"><%= t 'defaults.location' %></h3>
-          <p><%= flower.address %></p>
+          <p class="textarea textarea-ghost text-base sm:w-72 w-auto"><%= flower.address %></p>
           <h3 class="font-serif font-bold"><%= t 'defaults.time' %></h3>
           <p><%= l flower.datetime %></p>
           <h3 class="font-serif font-bold"><%= t 'defaults.status' %></h3>
