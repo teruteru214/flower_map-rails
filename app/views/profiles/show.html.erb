@@ -1,15 +1,15 @@
 <div class="hero min-h-screen bg-base-200">
-  <div class="card w-auto bg-base-100 shadow-xl">
+  <div class="card sm:w-96 w-64 bg-base-100 shadow-xl">
     <div class="card-body">
       <div class="flex">
-        <div class="w-24 h-24 rounded-full mr-5">
-          <%= image_tag current_user.avatar.url, class: 'w-24 h-24 rounded-full' %>
+        <div class="rounded-full mr-5">
+          <%= image_tag current_user.avatar.url, class: 'sm:w-24 sm:h-24 sm:mt-0 mt-4 w-9 h-9 rounded-full' %>
         </div>
         <div>
-          <h2 class="text-xl font-serif font-bold"><%= current_user.name %></h2>
-          <p><%= current_user.email %></p>
+          <h2 class="sm:text-xl text-base font-serif font-bold"><%= current_user.name %></h2>
+          <p class="sm:text-base text-xs"><%= current_user.email %></p>
           <%= link_to edit_profile_path do %>
-            <div class="btn btn-primary btn-sm font-light mt-3 w-28">
+            <div class="btn btn-primary sm:btn-sm btn-xs font-light mt-2 w-28">
               <%= t('defaults.edit') %>
             </div>
           <% end %>
