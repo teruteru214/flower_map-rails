@@ -104,3 +104,4 @@ gem 'enum_help'
 
 # Amazon_S3 image storage
 gem 'fog-aws'
+gem "aws-sdk-s3", require: false
