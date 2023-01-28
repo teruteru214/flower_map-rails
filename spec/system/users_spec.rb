@@ -85,4 +85,14 @@ RSpec.describe 'Users', type: :system do
       end
     end
   end
+  describe 'ログイン後' do
+    context 'ログアウトボタンをクリック' do
+      it 'ログアウト処理に成功する' do
+        login_as(user)
+        find(".logout").click
+        expect(page).to have_content 'ログアウトしました'
+        expect(page).to have_current_path root_path
+      end
+    end
+  end
 end
