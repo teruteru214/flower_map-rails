@@ -23,9 +23,9 @@
           <% end %>
         </div>
         <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.logout' %>>
-          <%= button_to logout_path, class: 'flex justify-center', method: :delete do %>
+          <%= button_to logout_path, class: 'flex justify-center logout', method: :delete do %>
             <%= image_tag 'logout.png', width: '50%', height: '50%',
-            class: 'mt-1'%>
+            class: 'mt-1' %>
           <% end %>
         </div>
       </div>
