@@ -83,6 +83,31 @@ RSpec.describe 'Users', type: :system do
           expect(current_path).to eq users_path
         end
       end
+
+      context 'パスワード確認の未入力' do
+        it 'ユーザーの新規作成が失敗する' do
+          visit new_user_path
+          fill_in 'ユーザー名', with: 'tarou'
+          fill_in 'メールアドレス', with: 'email@example.com'
+          fill_in 'パスワード', with: 'password'
+          fill_in 'パスワード確認', with: ''
+          click_button '登録完了'
+          expect(page).to have_content 'ユーザー登録に失敗しました'
+          expect(current_path).to eq users_path
+        end
+      end
+      context 'パスワード確認の未入力' do
+        it 'ユーザーの新規作成が失敗する' do
+          visit new_user_path
+          fill_in 'ユーザー名', with: 'tarou'
+          fill_in 'メールアドレス', with: 'email@example.com'
+          fill_in 'パスワード', with: 'password'
+          fill_in 'パスワード確認', with: ''
+          click_button '登録完了'
+          expect(page).to have_content 'ユーザー登録に失敗しました'
+          expect(current_path).to eq users_path
+        end
+      end
     end
   end
   describe 'ログイン後' do
