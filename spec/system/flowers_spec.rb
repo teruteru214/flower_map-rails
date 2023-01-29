@@ -3,12 +3,18 @@ require 'rails_helper'
 RSpec.describe "Flowers", type: :system do
   let(:user) { create(:user) }
   let(:flower) { create(:flower, user:) }
-
+  before do
+    login_as(user)
+  end
   describe '花情報のCRUD' do
-    before do
-      login_as(user)
-    end
-    describe '花情報の投稿' do
+    describe '投稿画面' do
+      context '投稿ページに遷移されている' do
+        it '見つけた花を投稿と書いてある' do
+          visit new_flower_path
+          expect(page).to have_content '見つけた花を投稿'
+        end
+      end
+
       context '何も入力しない場合' do
         it '投稿に失敗しましたと表記される' do
           visit new_flower_path
@@ -54,6 +60,25 @@ RSpec.describe "Flowers", type: :system do
           click_button '見つけた花を記録する'
           expect(page).to have_content '投稿が完了しました！'
         end
+      end
+    end
+  end
+  describe '一覧画面' do
+    let!(:flower) { create(:flower, user:) }
+    context '一覧画面に遷移されること' do
+      it '一覧画面が表示されている' do
+        visit flowers_path
+        expect(page).to have_content '各地の花々'
+      end
+    end
+
+    context '一覧画面に遷移されること' do
+      it '投稿情報が掲載されている' do
+        visit flowers_path
+        expect(page).to have_content '見つけた場所'
+        expect(page).to have_content '見つけた時間'
+        expect(page).to have_content '状態'
+        expect(page).to have_content '場所を地図で確認'
       end
     end
   end
