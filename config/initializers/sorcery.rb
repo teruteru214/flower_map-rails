@@ -80,7 +80,7 @@ Rails.application.config.sorcery.configure do |config|
   # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
   # Default: `[]`
   #
-  # config.external_providers =
+  config.external_providers = [:twitter]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -117,9 +117,14 @@ Rails.application.config.sorcery.configure do |config|
   #
   # config.twitter.key = ""
   # config.twitter.secret = ""
-  # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
-  # config.twitter.user_info_mapping = {:email => "screen_name"}
-  #
+  config.twitter.key = ENV['twitter_key']
+  config.twitter.secret = ENV['twitter_secret_key']
+  config.twitter.callback_url = Settings.sorcery[:callback_url]
+  config.twitter.user_info_path = "/1.1/account/verify_credentials.json?include_email=true"
+  config.twitter.user_info_mapping = {
+  email: 'email',
+  name: 'name',
+  }
   # config.facebook.key = ""
   # config.facebook.secret = ""
   # config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
@@ -226,7 +231,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.line.bot_prompt = "normal"
   # config.line.user_info_mapping = {name: 'displayName'}
 
-  
+
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
   # config.discord.key = "xxxxxx"
@@ -543,7 +548,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`
