@@ -37,6 +37,8 @@ ja:
       title: "新規登録"
       account_created: "アカウントをお持ちの方はこちら"
       register: "登録完了"
+      or: "OR"
+      twitter_login: "Twitterで登録"
     create:
       success: "ユーザー登録が完了しました"
       fail: "ユーザー登録に失敗しました"
@@ -45,6 +47,8 @@ ja:
       title: "ログイン"
       password_forgotten: "パスワードを忘れた方はこちら"
       new_register: "新規の方はこちら"
+      or: "OR"
+      twitter_login: "Twitterでログイン・登録"
     create:
       success: "ログインしました"
       fail: "ログインに失敗しました"

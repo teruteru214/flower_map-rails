@@ -1,0 +1,6 @@
+default_url_options:
+  protcol: "https"
+  host: "flower-map.herokuapp.com"
+
+sorcery:
+  callback_url: "https://flower-map.herokuapp.com/oauth/callback?provider=twitter"
