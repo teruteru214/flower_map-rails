@@ -119,7 +119,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.twitter.secret = ""
   config.twitter.key = ENV['twitter_key']
   config.twitter.secret = ENV['twitter_secret_key']
-  config.twitter.callback_url = "http://127.0.0.1:3000/oauth/callback?provider=twitter"
+  config.twitter.callback_url = "https://127.0.0.1:3000/oauth/callback?provider=twitter"
   config.twitter.callback_url = "https://flower-map.herokuapp.com/oauth/callback?provider=twitter"
   config.twitter.user_info_mapping = {
   email: 'email',
