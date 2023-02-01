@@ -67,16 +67,16 @@
 
 ## ER 図
 
-[![Image from Gyazo](https://i.gyazo.com/7fb60c77a7bd093921b8b956dda114ae.png)](https://gyazo.com/7fb60c77a7bd093921b8b956dda114ae)
+[![Image from Gyazo](https://i.gyazo.com/758daf627c82ed81bb836b0050dea184.png)](https://gyazo.com/758daf627c82ed81bb836b0050dea184)
 
 ## スケジュール
 
-企画/技術操作:11/10 〆切
+企画/技術操作:11/20 〆切
 <br>
-README~ER 図作成:11/15 〆切
+README~ER 図作成:11/25 〆切
 <br>
-メイン機能実装:11/15 - 1/27 〆切
+メイン機能実装:12/15 - 2/17 〆切
 <br>
-β 版を RUNTEQ 内でリリース:1/27 〆切
+β 版を RUNTEQ 内でリリース:2/17 〆切
 <br>
-本番リリース: 1 月末
+本番リリース: 2 月中旬
