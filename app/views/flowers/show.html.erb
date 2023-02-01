@@ -11,9 +11,15 @@
       <%= image_tag @flower.flower_image_url, class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72 mt-3" %>
       <label class="label font-serif font-bold w-96 mt-3"><%= t '.address' %></label>
       <p class="textarea textarea-ghost sm:w-96 w-72 text-base"><%= @flower.address %></p>
+      <label class="label font-serif font-bold w-96 mt-3"><%= t '.address_detail' %></label>
+      <% if @flower.address_detail? %>
+        <p class="textarea textarea-ghost sm:w-96 w-72 text-base"><%= @flower.address_detail %></p>
+      <% else %>
+        <p class="textarea textarea-ghost sm:w-96 w-72 text-base"><%= t '.no_address_detail' %></p>
+      <% end %>
       <div id='map' class="rounded-xl sm:w-96 sm:h-96 w-72 h-96 mt-3"></div>
-      <label class="label font-serif font-bold w-72 mt-7"><%= t '.datetime' %></label>
-      <p><%= l @flower.datetime %></p>
+      <label class="label font-serif font-bold w-72 mt-3"><%= t '.date' %></label>
+      <p><%= l @flower.date %></p>
       <label class="label font-serif font-bold mt-3"><%= t '.status' %></label>
       <p><%= @flower.status_i18n %></p>
       <div class="flex my-4">

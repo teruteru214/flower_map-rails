@@ -50,7 +50,7 @@ class FlowersController < ApplicationController
   private
 
   def flower_params
-    params.require(:flower).permit(:name, :address, :datetime,:status, :flower_image, :flower_image_cache, :latitude, :longitude)
+    params.require(:flower).permit(:latitude, :longitude, :address, :address_detail, :name, :date, :status, :flower_image, :flower_image_cache)
   end
 
   def find_flower
