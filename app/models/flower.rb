@@ -6,7 +6,8 @@ class Flower < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :address, presence: true, length: { maximum: 150 }
-  validates :datetime, presence: true
+  validates :address_detail, length: { maximum: 500 }
+  validates :date, presence: true
 
   enum status: { bad: 0, rather_bad: 1, usually: 2, good: 3, beautiful: 4 }
 end
