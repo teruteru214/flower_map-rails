@@ -67,7 +67,7 @@
 
 ## ER 図
 
-[![Image from Gyazo](https://i.gyazo.com/23378572fe71f9fd9138c6e653527168.png)](https://gyazo.com/23378572fe71f9fd9138c6e653527168)
+[![Image from Gyazo](https://i.gyazo.com/758daf627c82ed81bb836b0050dea184.png)](https://gyazo.com/758daf627c82ed81bb836b0050dea184)
 
 ## スケジュール
 
