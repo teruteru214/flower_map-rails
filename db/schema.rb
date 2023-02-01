@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_091852) do
 
   create_table "flowers", force: :cascade do |t|
     t.string "name", null: false
-    t.datetime "datetime", null: false
+    t.date "date", null: false
     t.integer "status", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_091852) do
     t.float "latitude"
     t.float "longitude"
     t.string "address", null: false
+    t.string "address_detail"
     t.string "flower_image"
     t.index ["user_id"], name: "index_flowers_on_user_id"
   end
