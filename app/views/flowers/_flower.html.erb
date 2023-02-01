@@ -1,21 +1,16 @@
-<div class="flower-content m-5">
-  <div id="flower-id-<%= flower.id %>">
-    <div class="card w-full bg-base-100 shadow-xl">
-      <div class="sm:flex">
-        <figure class="m-5">
-          <%= image_tag flower.flower_image_url, class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72" %>
-        </figure>
-        <div class="card-body items-center text-center">
-          <h2 class="text-4xl font-serif text-green-600 text-opacity-70"><%= flower.name %></h2>
-          <h3 class="font-serif font-bold"><%= t 'defaults.location' %></h3>
-          <p class="textarea textarea-ghost text-base sm:w-72 w-auto"><%= flower.address %></p>
-          <h3 class="font-serif font-bold"><%= t 'defaults.date' %></h3>
-          <p><%= l flower.date %></p>
-          <h3 class="font-serif font-bold"><%= t 'defaults.status' %></h3>
-          <p><%= flower.status_i18n %></p>
-          <%= link_to (t 'defaults.detail_screen'), flower_path(flower), class: "btn btn-primary" %>
-        </div>
-        <div>
+<div class="flex justify-center m-4">
+  <%= link_to flower_path(flower) do %>
+    <div class="card bg-base-100 shadow-xl image-full">
+      <figure><%= image_tag flower.flower_image_url, class: "rounded-xl" %></figure>
+      <div class="card-body">
+        <h2 class="text-3xl font-serif"><%= flower.name %></h2>
+        <h3 class="font-serif font-bold mt-3"><%= t 'defaults.location' %></h3>
+        <p class="w-80 break-all"><%= flower.address %></p>
+        <h3 class="font-serif font-bold mt-3"><%= t 'defaults.date' %></h3>
+        <p><%= l flower.date %></p>
+        <h3 class="font-serif font-bold mt-3"><%= t 'defaults.status' %></h3>
+        <p><%= flower.status_i18n %></p>
+        <div class="mt-3">
           <% if current_user.own?(flower) %>
             <%= render 'crud_menus', flower: flower %>
           <% else %>
@@ -24,5 +19,5 @@
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>

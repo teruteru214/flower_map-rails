@@ -5,8 +5,8 @@ class Flower < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
-  validates :address, presence: true, length: { maximum: 150 }
-  validates :address_detail, length: { maximum: 500 }
+  validates :address, presence: true, length: { maximum: 5000 }
+  validates :address_detail, length: { maximum: 5000 }
   validates :date, presence: true
 
   enum status: { bad: 0, rather_bad: 1, usually: 2, good: 3, beautiful: 4 }

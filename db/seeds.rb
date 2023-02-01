@@ -12,7 +12,7 @@ end
   Flower.create(
     user: User.offset(rand(User.count)).first,
     name: 'ヒマワリ',
-    datetime: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    date: Date.today,
     status: 2,
     latitude: 35.7100069,
     longitude: 139.8108103,
@@ -20,10 +20,10 @@ end
   )
 end
 
-require "csv"
+# require "csv"
 
-CSV.foreach('db/flower_word.csv', headers: true) do |row|
-FlowerWord.find_or_create_by(
-  name: row['花の名前'],
-  word: row['花言葉'])
-end
+# CSV.foreach('db/flower_word.csv', headers: true) do |row|
+# FlowerWord.find_or_create_by(
+#   name: row['花の名前'],
+#   word: row['花言葉'])
+# end
