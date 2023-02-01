@@ -9,8 +9,8 @@
           <h2 class="text-4xl font-serif text-green-600 text-opacity-70"><%= flower.name %></h2>
           <h3 class="font-serif font-bold"><%= t 'defaults.location' %></h3>
           <p class="textarea textarea-ghost text-base sm:w-72 w-auto"><%= flower.address %></p>
-          <h3 class="font-serif font-bold"><%= t 'defaults.time' %></h3>
-          <p><%= l flower.datetime %></p>
+          <h3 class="font-serif font-bold"><%= t 'defaults.date' %></h3>
+          <p><%= l flower.date %></p>
           <h3 class="font-serif font-bold"><%= t 'defaults.status' %></h3>
           <p><%= flower.status_i18n %></p>
           <%= link_to (t 'defaults.detail_screen'), flower_path(flower), class: "btn btn-primary" %>

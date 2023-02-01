@@ -16,8 +16,8 @@ ja:
     comment_index: "コメント欄"
     comment: "コメントする"
     location: "見つけた場所"
-    time: "見つけた時間"
     detail_screen: "場所を地図で確認"
+    date: "見つけた日"
     status: "状態"
     edit: "編集"
     gap: "..."
@@ -27,6 +27,11 @@ ja:
     unfavorite: "お気に入り解除"
     post_comment: "投稿"
     placeholder_comment: "コメントは25文字まで!"
+    find_a_location: "花の見つけた場所を入力してください"
+    touch_map: "地図をタッチすると住所を取得されて、ここに入力されます"
+    place_detail: "任意"
+    flower_name: "花の名前を入力しましょう"
+    map_detail: "※(山や川など)住所を取得できない場所もあるのでご承知ください"
   static_pages:
     top:
       theme: "見つけた花を地図に記録"
@@ -59,18 +64,20 @@ ja:
       title: "各地の花々"
       not_posted: "投稿されていません。投稿しましょう！"
     new:
-      title: "見つけた花を投稿"
+      title: "見つけた花を記録"
       post: "見つけた花を記録する"
     edit:
-      title: "編集画面"
+      title: "記録した花の編集"
     create:
       success: "投稿が完了しました！"
       fail: "投稿が失敗しました。不足している項目があります"
     show:
       title: "花の記録"
       address: "住所"
+      address_detail: "場所の詳細"
+      no_address_detail: "記述はないです"
       post_name: "投稿者"
-      datetime: "見つけた日付"
+      date: "見つけた日"
       status: "花の状態"
       image: "花の写真"
       edit: "編集する"

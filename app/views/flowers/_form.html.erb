@@ -1,4 +1,4 @@
-<input id="address" name="address" type="text" class="input input-bordered input-sm max-w-xs text-left sm:w-96 w-56 mb-1">
+<input id="address" name="address" type="text" class="input input-bordered input-sm max-w-xs text-left sm:w-96 w-56 mb-1", placeholder=<%= t ('defaults.find_a_location') %>>
 <input type="button" class="btn btn-primary btn-sm font-thin", value=<%= t 'defaults.search' %> , onclick="codeAddress()">
 <div id='map' class="rounded-xl sm:w-96 w-72 h-96" onclick="touchAddress()"></div>
 
@@ -11,17 +11,23 @@
     <%= f.label :longitude %>
     <%= f.text_field :longitude %>
   </div>
-  <div class="form-control">
-    <%= f.label :address, class: "font-serif font-bold mt-7" %>
-    <%= f.text_area :address, class: "textarea sm:w-96 w-72" %>
+  <div class="form-control mt-7">
+    <%= f.label :address, class: "font-serif font-bold" %>
+    <%= f.text_area :address, class: "textarea sm:w-96 w-72", placeholder: t( 'defaults.touch_map') %>
+  </div>
+  <p class="text-gray-500 text-xs mt-1"><%= t 'defaults.map_detail' %></p>
+  <div class="form-control mt-3">
+    <%= f.label :address_detail, class: "font-serif font-bold" %>
+    <%= f.text_area :address_detail, class: "textarea sm:w-96 w-72",
+    placeholder: t( 'defaults.place_detail') %>
   </div>
   <div class="form-control mt-3">
-    <%= f.label :datetime, class: "font-serif font-bold" %>
-    <%= f.datetime_field :datetime, class: "input sm:w-96 w-72", placeholder: "日付を入力してください" %>
+    <%= f.label :date, class: "font-serif font-bold" %>
+    <%= f.date_field :date, class: "input sm:w-96 w-72" %>
   </div>
   <div class="form-control mt-3">
     <%= f.label :name, class: "font-serif font-bold" %>
-    <%= f.text_field :name, class: "input sm:w-96 w-72"%>
+    <%= f.text_field :name, class: "input sm:w-96 w-72", placeholder: t( 'defaults.flower_name')%>
   </div>
   <div class="form-control mt-3">
     <%= f.label :status, class: "font-serif font-bold" %>
