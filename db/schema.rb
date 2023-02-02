@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_002850) do
     t.bigint "flower_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "evaluation", null: false
+    t.integer "evaluation", null: false
     t.index ["flower_id"], name: "index_comments_on_flower_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end

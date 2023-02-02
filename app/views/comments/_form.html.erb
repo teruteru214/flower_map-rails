@@ -4,15 +4,13 @@
   <label class="modal-box relative" for="">
     <%= form_with model: @comment, url: [@flower, @comment], local: true do |f| %>
       <%= f.text_area :body, class: 'textarea textarea-bordered w-72', placeholder: (t 'defaults.placeholder_comment') %>
-      <div class="form-control mt-3">
-        <%= f.label :evaluation, class: "font-serif font-bold" %>
-        <div class="rating">
-          <%= f.radio_button :evaluation, :bad, class: "mask mask-star-2 bg-green-500" %>
-          <%= f.radio_button :evaluation, :rather_bad, class: "mask mask-star-2 bg-green-500" %>
-          <%= f.radio_button :evaluation, :usually, class: "mask mask-star-2 bg-green-500", checked: true %>
-          <%= f.radio_button :evaluation, :good, class: "mask mask-star-2 bg-green-500" %>
-          <%= f.radio_button :evaluation, :beautiful, class: "mask mask-star-2 bg-green-500" %>
-        </div>
+      <%= f.label :evaluation, class: "font-serif font-bold" %>
+      <div class="rating">
+        <%= f.radio_button :evaluation, :bad, class: "mask mask-star-2 bg-green-500" %>
+        <%= f.radio_button :evaluation, :rather_bad, class: "mask mask-star-2 bg-green-500" %>
+        <%= f.radio_button :evaluation, :usually, class: "mask mask-star-2 bg-green-500", checked: true %>
+        <%= f.radio_button :evaluation, :good, class: "mask mask-star-2 bg-green-500" %>
+        <%= f.radio_button :evaluation, :beautiful, class: "mask mask-star-2 bg-green-500" %>
       </div>
       <%= f.submit (t 'defaults.post_comment'), class: 'btn btn-sm' %>
     <% end %>

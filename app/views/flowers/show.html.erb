@@ -22,16 +22,17 @@
       <p><%= l @flower.date %></p>
       <label class="label font-serif font-bold mt-3"><%= t '.status' %></label>
       <p><%= @flower.status_i18n %></p>
-      <div class="flex my-4">
+      <div class="my-3">
         <%= render 'comments/form', { flower: @flower, comment: @comment } %>
-        <%= render 'comments/comments', { comments: @comments } %>
-      <div class="flex my-7">
-          <% if current_user.own?(@flower) %>
-            <div class="flex">
-              <%= link_to t( '.edit' ),edit_flower_path(@flower), class: "btn btn-primary mr-1", id: "button-edit-#{@flower.id}" %>
-              <%= button_to t('.destroy'), flower_path(@flower), class: "btn btn-primary", id: "button-delete-#{@flower.id}", method: :delete, data: { confirm: '削除完了しました' } %>
-            </div>
-          <% end %>
+      </div>
+      <%= render 'comments/comments', { comments: @comments } %>
+      <div class="my-4">
+        <% if current_user.own?(@flower) %>
+          <div class="flex justify-center">
+            <%= link_to t( '.edit' ), edit_flower_path(@flower), class: "btn btn-primary mr-1", id: "button-edit-#{@flower.id}" %>
+            <%= button_to t('.destroy'), flower_path(@flower), class: "btn btn-primary", id: "button-delete-#{@flower.id}", method: :delete, data: { confirm: '削除完了しました' } %>
+          </div>
+        <% end %>
       </div>
       </div>
     </div>
