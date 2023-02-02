@@ -12,9 +12,11 @@
       <% if current_user.own?(comment) %>
         <ul class='mt-1'>
           <li>
-            <%= button_to comment_path(comment), method: :delete do %>
-              <%= image_tag 'trash.png', size: '16x16' %>
-            <% end %>
+            <div class="tooltip tooltip-bottom" data-tip=<%= t 'defaults.delete' %>>
+              <%= button_to comment_path(comment), method: :delete do %>
+                <%= image_tag 'trash.png', class: "w-7 h-7" %>
+              <% end %>
+            </div>
           </li>
         </ul>
       <% end %>
