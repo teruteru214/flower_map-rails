@@ -3,6 +3,7 @@ ja:
     models:
       user: "ユーザー"
       flower: "花"
+      comment: "コメント"
     attributes:
       user:
         name: "ユーザー名"
@@ -19,6 +20,9 @@ ja:
         name: "花の名前"
         status: "花の状態"
         flower_image: "花の写真"
+      comment:
+        body: "コメント内容"
+        evaluation: "評価"
   attributes:
     created_at: 作成日
     updated_at: 更新日
@@ -39,3 +43,10 @@ ja:
         usually: "⭐⭐⭐☆☆"
         good: "⭐⭐⭐⭐☆"
         beautiful: "⭐⭐⭐⭐⭐"
+    comment:
+      evaluation:
+        bad: "🌟☆☆☆☆"
+        rather_bad: "🌟🌟☆☆☆"
+        usually: "🌟🌟🌟☆☆"
+        good: "🌟🌟🌟🌟☆"
+        beautiful: "🌟🌟🌟🌟🌟"
