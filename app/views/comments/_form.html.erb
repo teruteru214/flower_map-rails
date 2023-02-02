@@ -1,12 +1,20 @@
-<label for="my-modal-3" class="btn btn-primary"><%= t 'defaults.comment' %></label>
-<input type="checkbox" id="my-modal-3" class="modal-toggle w-72" />
-<div class="modal sm:pr-0 pr-24">
-  <div class="modal-box relative w-72">
-    <label for="my-modal-3" class="btn btn-sm btn-circle btn-outline absolute right-2 top-2">✕</label>
-      <%= form_with model: @comment, url: [@flower, @comment], local: true, class: 'flex' do |f| %>
-        <%= f.text_area :body, class: 'textarea textarea-bordered', placeholder: (t 'defaults.placeholder_comment') %>
-        <%= f.submit (t 'defaults.post_comment'), class: 'btn btn-sm mt-11 ml-1' %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<label for="my-modal-4" class="btn"><%= t 'defaults.comment' %></label>
+<input type="checkbox" id="my-modal-4" class="modal-toggle" />
+<label for="my-modal-4" class="modal cursor-pointer">
+  <label class="modal-box relative" for="">
+    <%= form_with model: @comment, url: [@flower, @comment], local: true do |f| %>
+      <%= f.text_area :body, class: 'textarea textarea-bordered w-72', placeholder: (t 'defaults.placeholder_comment') %>
+      <div class="form-control mt-3">
+        <%= f.label :evaluation, class: "font-serif font-bold" %>
+        <div class="rating">
+          <%= f.radio_button :evaluation, :bad, class: "mask mask-star-2 bg-green-500" %>
+          <%= f.radio_button :evaluation, :rather_bad, class: "mask mask-star-2 bg-green-500" %>
+          <%= f.radio_button :evaluation, :usually, class: "mask mask-star-2 bg-green-500", checked: true %>
+          <%= f.radio_button :evaluation, :good, class: "mask mask-star-2 bg-green-500" %>
+          <%= f.radio_button :evaluation, :beautiful, class: "mask mask-star-2 bg-green-500" %>
+        </div>
+      </div>
+      <%= f.submit (t 'defaults.post_comment'), class: 'btn btn-sm' %>
+    <% end %>
+  </label>
+</label>

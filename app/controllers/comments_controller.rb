@@ -17,6 +17,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body).merge(flower_id: params[:flower_id])
+    params.require(:comment).permit(:body, :evaluation).merge(flower_id: params[:flower_id])
   end
 end
