@@ -1,4 +1,6 @@
 class UnknownFlower < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   belongs_to :user
 
   validates :feature, length: { maximum: 50000 }
