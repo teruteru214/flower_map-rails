@@ -2,8 +2,8 @@
   <%= link_to '#' do %>
     <div class="card bg-base-100 shadow-xl image-full">
       <figure><%= image_tag unknown_flower.image_url, class: "rounded-xl" %></figure>
-      <div class="card-body">
-        <h2 class="text-3xl font-serif"><%= unknown_flower.feature %></h2>
+      <div class="card-body flex justify-center">
+        <p class="text-base font-serif sm:w-80 w-72 break-all"><%= unknown_flower.feature %></p>
       </div>
     </div>
   <% end %>

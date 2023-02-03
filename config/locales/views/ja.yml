@@ -3,6 +3,7 @@ ja:
     new_user: "新規登録"
     login_user: "ログイン"
     login: "ログインする"
+    question: "質問する"
     question_flower: "何の花か質問する"
     post: "見つけた花を投稿する"
     terms_of_use: "利用規約"
@@ -107,5 +108,10 @@ ja:
       title: "プロフィール編集"
   unknown_flowers:
     index:
-      title: "見つけた花の名を質問"
+      title: "質問欄"
       not_posted: "質問がありません"
+    new:
+      title: "質問フォーム"
+    create:
+      success: "質問が投稿されました！"
+      fail: "質問が投稿できませんでした"

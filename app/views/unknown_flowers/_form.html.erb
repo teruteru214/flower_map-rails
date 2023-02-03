@@ -1,0 +1,16 @@
+<%= form_with model: unknown_flower, local: true do |f| %>
+  <div class="form-group mt-3">
+    <%= f.label :image, class: "font-serif font-bold" %>
+    <%= f.file_field :image, onchange: 'previewImage()', class: "form-control file-input sm:w-96 w-72" %>
+    <%= f.hidden_field :flower_image_cache %>
+    <%= image_tag unknown_flower.image_url, id: 'preview', class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72 mt-5" %>
+    <%= javascript_include_tag 'image' %>
+  </div>
+  <div class="form-control mt-7">
+    <%= f.label :feature, class: "font-serif font-bold" %>
+    <%= f.text_area :feature, class: "textarea sm:w-96 w-72", placeholder: t( 'defaults.place_detail') %>
+  </div>
+  <div class="flex justify-center">
+    <%= f.submit class: "btn btn-primary font-light mt-5" %>
+  </div>
+<% end %>

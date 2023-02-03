@@ -10,8 +10,8 @@ class UnknownFlowersController < ApplicationController
   end
 
   def create
-    @unknown_flower = current_user.unknown_flowers.build(unknown_flower_params)
-    if @flower.save
+    @unknown_flower = current_user.unknown_flower.build(unknown_flower_params)
+    if @unknown_flower.save
       redirect_to unknown_flowers_path, success: t('.success')
     else
       flash.now['danger'] = t('.fail')

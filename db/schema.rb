@@ -69,11 +69,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_005432) do
 
   create_table "unknown_flowers", force: :cascade do |t|
     t.string "feature"
-    t.integer "reception", null: false
+    t.integer "reception"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image", null: false
+    t.string "image"
     t.index ["user_id"], name: "index_unknown_flowers_on_user_id"
   end
 
