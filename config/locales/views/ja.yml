@@ -115,3 +115,5 @@ ja:
     create:
       success: "質問が投稿されました！"
       fail: "質問が投稿できませんでした"
+    show:
+      feature: "花の特徴"
