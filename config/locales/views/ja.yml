@@ -3,6 +3,7 @@ ja:
     new_user: "新規登録"
     login_user: "ログイン"
     login: "ログインする"
+    question_flower: "何の花か質問する"
     post: "見つけた花を投稿する"
     terms_of_use: "利用規約"
     privacy_policy: "プライバシーポリシー"
@@ -104,3 +105,7 @@ ja:
       fail: "ユーザーを更新できませんでした"
     edit:
       title: "プロフィール編集"
+  unknown_flowers:
+    index:
+      title: "見つけた花の名を質問"
+      not_posted: "質問がありません"

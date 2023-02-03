@@ -70,9 +70,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_005432) do
   create_table "unknown_flowers", force: :cascade do |t|
     t.string "feature"
     t.integer "reception", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image", null: false
+    t.index ["user_id"], name: "index_unknown_flowers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,4 +93,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_005432) do
   add_foreign_key "favorites", "flowers"
   add_foreign_key "favorites", "users"
   add_foreign_key "flowers", "users"
+  add_foreign_key "unknown_flowers", "users"
 end

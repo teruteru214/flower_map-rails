@@ -2,7 +2,7 @@ class UnknownFlowersController < ApplicationController
   before_action :find_flower, only: %i[edit update destroy]
 
   def index
-    @unknown_flowers = UnknownFlowers.all.includes(:user).order(created_at: :desc)
+    @unknown_flowers = UnknownFlower.all.includes(:user).order(created_at: :desc)
   end
 
   def new

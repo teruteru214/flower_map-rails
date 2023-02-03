@@ -1,0 +1,10 @@
+<div class="bg-base-200">
+  <div class="text-center">
+    <h1 class="sm:text-4xl text-2xl text-center font-serif p-10 text-accent-focus"><%= t '.title' %></h1>
+    <% if @unknown_flowers.present? %>
+      <%= render @unknown_flowers %>
+    <% else %>
+      <p><%= t '.not_posted' %></p>
+    <% end %>
+  </div>
+</div>
