@@ -26,7 +26,7 @@ class UnknownFlowersController < ApplicationController
   def edit; end
 
   def update
-    if @flower.update(unknown_flower_params)
+    if @unknown_flower.update(unknown_flower_params)
       redirect_to @unknown_flower, success: t('.success')
     else
       flash.now['danger'] = t('.fail')
