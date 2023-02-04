@@ -42,7 +42,7 @@ class UnknownFlowersController < ApplicationController
   private
 
   def unknown_flower_params
-    params.require(:unknown_flower).permit(:image, :image_cache, :feature, :reception)
+    params.require(:unknown_flower).permit(:image, :image_cache, :date, :feature, :reception)
   end
 
   def find_unknown_flower

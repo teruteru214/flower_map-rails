@@ -6,7 +6,11 @@
     <%= image_tag unknown_flower.image_url, id: 'preview', class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72 mt-5" %>
     <%= javascript_include_tag 'image' %>
   </div>
-  <div class="form-control mt-7">
+  <div class="form-control mt-3">
+    <%= f.label :date, class: "font-serif font-bold" %>
+    <%= f.date_field :date, class: "input sm:w-96 w-72" %>
+  </div>
+  <div class="form-control mt-3">
     <%= f.label :feature, class: "font-serif font-bold" %>
     <%= f.text_area :feature, class: "textarea sm:w-96 w-72", placeholder: t( 'defaults.place_detail') %>
   </div>

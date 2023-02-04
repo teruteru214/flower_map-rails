@@ -3,8 +3,12 @@
     <div class="card bg-base-100 shadow-xl image-full">
       <figure><%= image_tag unknown_flower.image_url, class: "rounded-xl" %></figure>
       <div class="card-body flex justify-center">
-        <p class="text-2xl font-serif sm:w-80 w-72 break-all"><%= t 'defaults.feature' %></p>
-        <p class="text-base font-serif sm:w-80 w-72 break-all"><%= unknown_flower.feature %></p>
+        <p class="text-2xl font-serif sm:w-80 w-72 break-all"><%= t 'defaults.date' %></p>
+        <% if unknown_flower.date %>
+          <p class="sm:w-80 w-72 break-all"><%= l unknown_flower.date %></p>
+          <p class="text-2xl font-serif sm:w-80 w-72 break-all"><%= t 'defaults.feature' %></p>
+        <% end %>
+        <p class="sm:w-80 w-72 break-all"><%= unknown_flower.feature %></p>
       </div>
     </div>
   <% end %>

@@ -26,6 +26,7 @@ ja:
         evaluation: "評価"
       unknown_flower:
         image: "花の写真"
+        date: "見つけた日"
         feature: "花の特徴"
   attributes:
     created_at: 作成日
