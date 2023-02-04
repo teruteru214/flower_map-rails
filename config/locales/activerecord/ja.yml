@@ -4,6 +4,7 @@ ja:
       user: "ユーザー"
       flower: "花"
       comment: "コメント"
+      unknown_flower: "不明な花"
     attributes:
       user:
         name: "ユーザー名"
@@ -23,12 +24,16 @@ ja:
       comment:
         body: "コメント内容"
         evaluation: "評価"
+      unknown_flower:
+        image: "花の写真"
+        date: "見つけた日"
+        feature: "花の特徴"
   attributes:
     created_at: 作成日
     updated_at: 更新日
   helpers:
     submit:
-      create: "見つけた%{model}を記録する"
+      create: "記録する"
       update: "更新する"
     placeholder:
       flower:
