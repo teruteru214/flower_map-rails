@@ -69,7 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_013624) do
 
   create_table "unknown_flowers", force: :cascade do |t|
     t.string "feature"
-    t.integer "reception"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
