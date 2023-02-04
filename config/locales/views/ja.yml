@@ -34,6 +34,7 @@ ja:
     place_detail: "任意"
     flower_name: "花の名前を入力しましょう"
     map_detail: "※(山や川など)住所を取得できない場所もあるのでご承知ください"
+    feature: "花の特徴"
   static_pages:
     top:
       theme: "見つけた花を地図に記録"
@@ -116,4 +117,12 @@ ja:
       success: "質問が投稿されました！"
       fail: "質問が投稿できませんでした"
     show:
+      title: "花の名前、募集中！"
       feature: "花の特徴"
+    edit:
+      title: "質問を編集"
+    update:
+      success: "編集が完了しました！"
+      fail: "編集が失敗しました"
+    destroy:
+      success: "削除完了しました！"

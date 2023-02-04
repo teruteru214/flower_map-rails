@@ -1,5 +1,5 @@
 class UnknownFlowersController < ApplicationController
-  before_action :find_flower, only: %i[edit update destroy]
+  before_action :find_unknown_flower, only: %i[edit update destroy]
 
   def index
     @unknown_flowers = UnknownFlower.all.includes(:user).order(created_at: :desc)
@@ -46,6 +46,6 @@ class UnknownFlowersController < ApplicationController
   end
 
   def find_unknown_flower
-    @unknown_flower = current_user.unknown_flowers.find(params[:id])
+    @unknown_flower = current_user.unknown_flower.find(params[:id])
   end
 end

@@ -1,10 +1,13 @@
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content">
     <div class="max-w-md">
+      <h1 class="sm:text-4xl text-2xl text-center font-serif p-10 text-accent-focus"><%= t '.title' %></h1>
       <%= image_tag @unknown_flower.image_url, class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72 mt-3" %>
       <label class="label font-serif font-bold sm:w-96 w-72 mt-3"><%= t '.feature' %></label>
       <p class="sm:w-96 w-72 break-all"><%= @unknown_flower.feature %></p>
-      </div>
+      <% if current_user.own?(@unknown_flower) %>
+        <%= render 'crud_menus', unknown_flower: @unknown_flower %>
+      <% end %>
     </div>
   </div>
 </div>
