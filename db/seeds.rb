@@ -1,4 +1,3 @@
-
 10.times do
   User.create(
     name: Faker::Name.first_name,
@@ -17,6 +16,15 @@ end
     latitude: 35.7100069,
     longitude: 139.8108103,
     address: '〒131-0045 東京都墨田区押上１丁目１−２'
+  )
+end
+
+20.times do |index|
+  UnknownFlower.create(
+    user: User.offset(rand(User.count)).first,
+    image: File.open("./app/assets/images/no_image.png"),
+    feature: 'test',
+    reception: 0
   )
 end
 

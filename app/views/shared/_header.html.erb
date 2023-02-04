@@ -7,25 +7,29 @@
     </div>
     <div class="hidden md:flex">
       <div class='items-stretch'>
+        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.question_flower' %>>
+          <%= link_to unknown_flowers_path, class: 'flex justify-center' do %>
+            <%= image_tag 'flower_question.png', class: "w-7 h-7" %>
+          <% end %>
+        </div>
         <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.post_flower' %>>
           <%= link_to new_flower_path, class: 'flex justify-center' do %>
-            <%= image_tag 'paper_airplane.png', width: '50%', height: '50%' %>
+            <%= image_tag 'paper_airplane.png', class: "w-7 h-7 mx-3" %>
           <% end %>
         </div>
         <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.flower_index' %>>
           <%= link_to flowers_path, class: 'flex justify-center' do %>
-            <%= image_tag 'flower_index.png', width: '50%', height: '50%' %>
+            <%= image_tag 'flower_index.png', class: "w-7 h-7" %>
           <% end %>
         </div>
         <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.mypage' %>>
           <%= link_to profile_path, class: 'flex justify-center' do %>
-            <%= image_tag 'mypage.png', width: '50%', height: '50%' %>
+            <%= image_tag 'mypage.png', class: "w-7 h-7 mx-3" %>
           <% end %>
         </div>
         <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.logout' %>>
           <%= button_to logout_path, class: 'flex justify-center logout', method: :delete do %>
-            <%= image_tag 'logout.png', width: '50%', height: '50%',
-            class: 'mt-1' %>
+            <%= image_tag 'logout.png', class: 'w-7 h-7 mt-1 mr-5' %>
           <% end %>
         </div>
       </div>
@@ -34,6 +38,9 @@
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost m-1 text-white">Menu</label>
         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+          <li>
+            <%= link_to (t 'defaults.question_flower'), unknown_flowers_path %>
+          </li>
           <li>
             <%= link_to (t 'defaults.post'), new_flower_path %>
           </li>

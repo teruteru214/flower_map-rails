@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get :favorites
     end
   end
+  resources :unknown_flowers
   resources :favorites, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
 end
