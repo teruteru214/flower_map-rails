@@ -21,6 +21,8 @@ class UnknownFlowersController < ApplicationController
 
   def show
     @unknown_flower = UnknownFlower.find(params[:id])
+    @answer = Answer.new
+    @answers = @unknown_flower.answers.includes(:user).order(created_at: :desc)
   end
 
   def edit; end

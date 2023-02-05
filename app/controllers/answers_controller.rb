@@ -17,6 +17,6 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:body, :evaluation).merge(unknown_flower_id: params[:unknown_flower_id])
+    params.require(:answer).permit(:body).merge(unknown_flower_id: params[:unknown_flower_id])
   end
 end
