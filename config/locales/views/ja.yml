@@ -29,6 +29,8 @@ ja:
     unfavorite: "お気に入り解除"
     post_comment: "投稿"
     placeholder_comment: "レビューを書こう"
+    answer: "回答する"
+    answer_index: "回答欄"
     find_a_location: "花の見つけた場所を入力してください"
     touch_map: "地図をタッチすると住所を取得されて、ここに入力されます"
     place_detail: "任意"
@@ -126,3 +128,9 @@ ja:
       fail: "編集が失敗しました"
     destroy:
       success: "削除完了しました！"
+  answers:
+    create:
+      success: "回答しました！"
+      fail: "回答に失敗しました"
+    destroy:
+      success: "回答を削除しました"

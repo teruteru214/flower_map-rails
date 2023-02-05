@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_04_013624) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_05_065258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "unknown_flower_id", null: false
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unknown_flower_id"], name: "index_answers_on_unknown_flower_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -88,6 +98,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_013624) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "answers", "unknown_flowers"
+  add_foreign_key "answers", "users"
   add_foreign_key "comments", "flowers"
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "flowers"
