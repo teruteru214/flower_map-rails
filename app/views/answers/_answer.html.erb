@@ -1,0 +1,24 @@
+<div id="answer-<%= answer.id %>">
+  <div class="card sm:w-80 w-56 bg-neutral shadow-xl">
+    <div class="card-body">
+      <div class="flex">
+        <div>
+          <%= image_tag answer.user.avatar_url, class: "rounded-full w-12 h-12" %>
+          <p class="text-sm text-white mt-3"><%= answer.user.name %></p>
+        </div>
+      </div>
+      <p class="text-white break-all"><%= answer.body %></p>
+      <% if current_user.own?(answer) %>
+        <ul class='mt-1'>
+          <li>
+            <div class="tooltip tooltip-bottom" data-tip=<%= t 'defaults.delete' %>>
+              <%= button_to answer_path(answer), method: :delete do %>
+                <%= image_tag 'trash.png', class: "w-7 h-7" %>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

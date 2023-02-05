@@ -9,6 +9,10 @@
       <% end %>
       <label class="label font-serif font-bold mt-3"><%= t '.feature' %></label>
       <p class="sm:w-96 w-72 break-all"><%= @unknown_flower.feature %></p>
+      <div class="my-3">
+        <%= render 'answers/form', { unknown_flower: @unknown_flower, answer: @answer } %>
+      </div>
+      <%= render 'answers/answers', { answers: @answers } %>
       <% if current_user.own?(@unknown_flower) %>
         <%= render 'crud_menus', unknown_flower: @unknown_flower %>
       <% end %>
