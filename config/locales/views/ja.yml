@@ -42,6 +42,13 @@ ja:
       theme: "見つけた花を地図に記録"
       description: "FlowerMapは道端で見つけた花の位置を記録、"
       description2: "共有をします"
+      treatment: "FlowerMapの使い方"
+      part1: "その１. ログインしよう"
+      description3: "本アプリの機能はログインしないと使えないのでご容赦ください"
+      part2: "その２. 花の写真を取ろう"
+      description4: "散歩中に見つけた花の写真をスマホ（もしくはカメラ）で取り、保存しましょう"
+      part3: "その３. 花の位置を記録しよう"
+      description5: "花の写真が撮れたら、自生していた位置を地図に記録して他の人に共有しましょう"
   users:
     new:
       title: "新規登録"
