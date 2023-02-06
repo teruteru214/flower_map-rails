@@ -1,5 +1,9 @@
 ja:
   defaults:
+    header_question: "花名を質問"
+    header_post: "花を投稿"
+    header_index: "投稿一覧"
+    header_profile: "マイページ"
     new_user: "新規登録"
     login_user: "ログイン"
     login: "ログインする"
