@@ -1,6 +1,6 @@
 <div class="hero min-h-screen bg-base-200">
   <%= form_with model: @user, url: profile_path, local: true do |f| %>
-    <h1 class="text-3xl font-serif font-bold text-accent-focus text-center"><%= t '.title' %></h1>
+    <h1 class="sm:text-4xl text-3xl font-serif pt-10 text-center text-accent-focus"><%= t '.title' %></h1>
     <div class="my-4">
       <div class="pt-5 pb-3">
         <%= f.label :name, class: "font-serif" %>

@@ -115,6 +115,8 @@ ja:
     destroy:
       success: "お気に入り解除しました"
   profiles:
+    show:
+      title: "マイページ"
     update:
       success: "ユーザーを更新しました"
       fail: "ユーザーを更新できませんでした"
@@ -130,7 +132,7 @@ ja:
       success: "質問が投稿されました！"
       fail: "質問が投稿できませんでした"
     show:
-      title: "花の名前、募集中！"
+      title: "花の名前、募集中"
       feature: "花の特徴"
       edit: "編集する"
       destroy: "削除する"
