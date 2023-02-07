@@ -31,7 +31,7 @@
         <% if current_user.own?(@flower) %>
           <div class="flex justify-center">
             <%= link_to t( '.edit' ), edit_flower_path(@flower), class: "btn btn-primary mr-1", id: "button-edit-#{@flower.id}" %>
-            <%= button_to t('.destroy'), flower_path(@flower), class: "btn btn-primary", id: "button-delete-#{@flower.id}", method: :delete, data: { confirm: '削除完了しました' } %>
+            <%= button_to t('.destroy'), flower_path(@flower), class: "btn btn-primary", method: :delete, data: { confirm: '削除完了しました' } %>
           </div>
         <% end %>
       </div>

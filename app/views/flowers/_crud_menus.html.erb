@@ -1,14 +1,14 @@
 <ul class='flex justify-center'>
   <li class="pr-3">
     <div class="tooltip tooltip-bottom" data-tip=<%= t 'defaults.edit' %>>
-      <%= link_to edit_flower_path(flower), id: "button-edit-#{flower.id}" do %>
+      <%= link_to edit_flower_path(flower) do %>
         <%= image_tag 'pen.png', class: "w-9 h-9" %>
       <% end %>
     </div>
   </li>
   <li>
     <div class="tooltip tooltip-bottom" data-tip=<%= t 'defaults.delete' %>>
-      <%= button_to flower_path(flower), id: "button-delete-#{flower.id}", method: :delete, data: { confirm: '削除完了しました' } do %>
+      <%= button_to flower_path(flower), method: :delete, data: { confirm: '削除完了しました' } do %>
         <%= image_tag 'trash.png', class: "w-6 h-9" %>
       <% end %>
     </div>
