@@ -14,7 +14,10 @@
       </div>
       <%= render 'answers/answers', { answers: @answers } %>
       <% if current_user.own?(@unknown_flower) %>
-        <%= render 'crud_menus', unknown_flower: @unknown_flower %>
+        <div class="flex justify-center mt-4">
+          <%= link_to t( '.edit' ), edit_unknown_flower_path(@unknown_flower), class: "btn btn-primary mr-2" %>
+          <%= button_to t('.destroy'), unknown_flower_path(@unknown_flower), class: "btn btn-primary ml-2", method: :delete, data: { confirm: '削除完了しました' } %>
+        </div>
       <% end %>
     </div>
   </div>

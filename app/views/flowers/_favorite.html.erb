@@ -1,5 +1,5 @@
 <div class="tooltip tooltip-bottom" data-tip=<%= t 'defaults.favorite' %>>
-  <%= button_to favorites_path(flower_id: flower.id), id: "js-favorite-button-for-flower-#{flower.id}", method: :post do %>
-    <%= image_tag 'heart2.png', size: '32x32' %>
+  <%= button_to favorites_path(flower_id: flower.id), method: :post do %>
+    <%= image_tag 'clover-white.png', class: "w-7 h-7" %>
   <% end %>
 </div>

@@ -132,6 +132,8 @@ ja:
     show:
       title: "花の名前、募集中！"
       feature: "花の特徴"
+      edit: "編集する"
+      destroy: "削除する"
     edit:
       title: "質問を編集"
     update:
