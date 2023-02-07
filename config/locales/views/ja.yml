@@ -145,3 +145,8 @@ ja:
       fail: "回答に失敗しました"
     destroy:
       success: "回答を削除しました"
+  oauths:
+    callback:
+      success1: "Twitterアカウントでのアカウント作成に成功。ログインしました！"
+      success2: "Twitterアカウントでのログインに成功しました!"
+      fail: "Twitterアカウントでログインに失敗しました"
