@@ -1,6 +1,6 @@
-<input id="address" name="address" type="text" class="input input-bordered input-sm max-w-xs text-left sm:w-96 w-56 mb-1", placeholder=<%= t ('defaults.find_a_location') %>>
+<input id="address" name="address" type="text" class="input input-bordered input-sm max-w-xs text-left sm:w-96 w-64 mb-1", placeholder=<%= t ('defaults.find_a_location') %>>
 <input type="button" class="btn btn-primary btn-sm font-thin", value=<%= t 'defaults.search' %> , onclick="codeAddress()">
-<div id='map' class="rounded-xl sm:w-96 w-72 h-96" onclick="touchAddress()"></div>
+<div id='map' class="rounded-xl sm:w-96 w-80 h-96" onclick="touchAddress()"></div>
 <% if @flower.address.present? %>
   <%= javascript_include_tag 'google_map_edit' %>
 <% else %>
@@ -18,21 +18,21 @@
   </div>
   <div class="form-control mt-7">
     <%= f.label :address, class: "font-serif font-bold" %>
-    <%= f.text_area :address, class: "textarea sm:w-96 w-72", placeholder: t( 'defaults.touch_map') %>
+    <%= f.text_area :address, class: "textarea sm:w-96 w-80", placeholder: t( 'defaults.touch_map') %>
   </div>
-  <p class="text-gray-500 text-xs mt-1 sm:w-96 w-72 break-all"><%= t 'defaults.map_detail' %></p>
+  <p class="text-gray-500 text-xs mt-1 sm:w-96 w-80 break-all"><%= t 'defaults.map_detail' %></p>
   <div class="form-control mt-3">
     <%= f.label :address_detail, class: "font-serif font-bold" %>
-    <%= f.text_area :address_detail, class: "textarea sm:w-96 w-72",
+    <%= f.text_area :address_detail, class: "textarea sm:w-96 w-80",
     placeholder: t( 'defaults.place_detail') %>
   </div>
   <div class="form-control mt-3">
     <%= f.label :date, class: "font-serif font-bold" %>
-    <%= f.date_field :date, class: "input sm:w-96 w-72" %>
+    <%= f.date_field :date, class: "input sm:w-96 w-80" %>
   </div>
   <div class="form-control mt-3">
     <%= f.label :name, class: "font-serif font-bold" %>
-    <%= f.text_field :name, class: "input sm:w-96 w-72", placeholder: t( 'defaults.flower_name')%>
+    <%= f.text_field :name, class: "input sm:w-96 w-80", placeholder: t( 'defaults.flower_name')%>
   </div>
   <div class="form-control mt-3">
     <%= f.label :status, class: "font-serif font-bold" %>
@@ -46,9 +46,9 @@
   </div>
   <div class="form-group mt-3">
     <%= f.label :flower_image, class: "font-serif font-bold" %>
-    <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input sm:w-96 w-72" %>
+    <%= f.file_field :flower_image, onchange: 'previewImage()', class: "form-control file-input sm:w-96 w-80" %>
     <%= f.hidden_field :flower_image_cache %>
-    <%= image_tag flower.flower_image_url, id: 'preview', class: "rounded-xl sm:w-96 sm:h-96 w-72 h-72 mt-5" %>
+    <%= image_tag flower.flower_image_url, id: 'preview', class: "rounded-xl sm:w-96 sm:h-96 w-80 h-80 mt-5" %>
     <%= javascript_include_tag 'image' %>
   </div>
   <div class="flex justify-center">
