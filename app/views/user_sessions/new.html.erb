@@ -5,7 +5,6 @@
     </div>
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <%= form_with model: @user, class: 'card-body' do |f|%>
-        <h1 class="text-lg font-serif font-bold text-primary text-center">ログイン</h1>
         <div class="form-control">
           <%= f.label :email, User.human_attribute_name(:email), class: "font-serif" %>
           <%= f.text_field :email, placeholder: "email", class: "input input-borderd border-opacity-20" %>
