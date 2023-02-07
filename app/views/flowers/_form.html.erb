@@ -1,7 +1,11 @@
 <input id="address" name="address" type="text" class="input input-bordered input-sm max-w-xs text-left sm:w-96 w-56 mb-1", placeholder=<%= t ('defaults.find_a_location') %>>
 <input type="button" class="btn btn-primary btn-sm font-thin", value=<%= t 'defaults.search' %> , onclick="codeAddress()">
 <div id='map' class="rounded-xl sm:w-96 w-72 h-96" onclick="touchAddress()"></div>
-<%= javascript_include_tag 'google_map' %>
+<% if @flower.address.present? %>
+  <%= javascript_include_tag 'google_map_edit' %>
+<% else %>
+  <%= javascript_include_tag 'google_map' %>
+<% end %>
 
 <%= form_with model: flower, local: true do |f| %>
   <div class="form-control hidden">
