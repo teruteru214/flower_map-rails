@@ -1,23 +1,23 @@
 <div class="hero min-h-screen bg-base-200">
   <%= form_with model: @user, url: profile_path, local: true do |f| %>
-    <h1 class="text-3xl font-serif font-bold text-accent-focus text-center"><%= t '.title' %></h1>
+    <h1 class="sm:text-4xl text-3xl font-serif pt-10 text-center text-accent-focus"><%= t '.title' %></h1>
     <div class="my-4">
       <div class="pt-5 pb-3">
         <%= f.label :name, class: "font-serif" %>
       </div>
-      <%= f.text_field :name, class: 'input input-bordered input-accent w-72 max-w-xs' %>
+      <%= f.text_field :name, class: 'input input-bordered input-accent w-80 max-w-xs' %>
     </div>
     <div class="my-4">
       <div class="pt-5 pb-3">
         <%= f.label :email, class: "font-serif" %>
       </div>
-      <%= f.email_field :email, class: 'input input-bordered input-accent w-72 max-w-xs' %>
+      <%= f.email_field :email, class: 'input input-bordered input-accent w-80 max-w-xs' %>
     </div>
     <div class="my-4">
       <div class="pt-5 pb-3">
         <%= f.label :avatar, class: 'font-serif' %>
       </div>
-      <%= f.file_field :avatar, class: 'file-input w-72 max-w-xs',
+      <%= f.file_field :avatar, class: 'file-input w-80 max-w-xs',
       onchange: 'previewImage()', accept: 'image/*' %>
       <%= f.hidden_field :avatar_cache %>
     </div>

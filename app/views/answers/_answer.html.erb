@@ -1,5 +1,5 @@
 <div id="answer-<%= answer.id %>">
-  <div class="card sm:w-80 w-56 bg-neutral shadow-xl">
+  <div class="card sm:w-80 w-64 bg-neutral shadow-xl">
     <div class="card-body">
       <div class="flex">
         <div>
@@ -13,7 +13,7 @@
           <li>
             <div class="tooltip tooltip-bottom" data-tip=<%= t 'defaults.delete' %>>
               <%= button_to answer_path(answer), method: :delete do %>
-                <%= image_tag 'trash.png', class: "w-7 h-7" %>
+                <%= image_tag 'trash.png', class: "w-6 h-9" %>
               <% end %>
             </div>
           </li>

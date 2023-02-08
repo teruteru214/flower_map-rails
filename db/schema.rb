@@ -55,13 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_05_065258) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "flower_words", force: :cascade do |t|
-    t.string "name"
-    t.string "word"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "flowers", force: :cascade do |t|
     t.string "name", null: false
     t.date "date", null: false
@@ -78,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_05_065258) do
   end
 
   create_table "unknown_flowers", force: :cascade do |t|
-    t.string "feature"
+    t.string "feature", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

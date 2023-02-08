@@ -1,20 +1,18 @@
 <div id="comment-<%= comment.id %>">
-  <div class="card sm:w-80 w-56 bg-neutral shadow-xl">
+  <div class="card sm:w-80 w-64 bg-neutral shadow-xl">
     <div class="card-body">
-      <div class="flex">
-        <div>
-          <%= image_tag comment.user.avatar_url, class: "rounded-full w-12 h-12" %>
-          <p class="text-white -mt-1 ml-1"><%= comment.user.name %></p>
-        </div>
-        <p class="sm:text-3xl text-base mt-5 ml-4"><%= comment.evaluation_i18n %></p>
+      <div>
+        <%= image_tag comment.user.avatar_url, class: "rounded-full w-12 h-12" %>
+        <p class="text-white"><%= comment.user.name %></p>
       </div>
+      <p class="sm:text-3xl text-base my-3"><%= comment.evaluation_i18n %></p>
       <p class="text-white break-all"><%= comment.body %></p>
       <% if current_user.own?(comment) %>
         <ul class='mt-1'>
           <li>
             <div class="tooltip tooltip-bottom" data-tip=<%= t 'defaults.delete' %>>
               <%= button_to comment_path(comment), method: :delete do %>
-                <%= image_tag 'trash.png', class: "w-7 h-7" %>
+                <%= image_tag 'trash.png', class: "w-6 h-9" %>
               <% end %>
             </div>
           </li>

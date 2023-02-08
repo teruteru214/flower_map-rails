@@ -7,29 +7,36 @@
     </div>
     <div class="hidden md:flex">
       <div class='items-stretch'>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.question_flower' %>>
+        <div class="flex">
           <%= link_to unknown_flowers_path, class: 'flex justify-center' do %>
-            <%= image_tag 'flower_question.png', class: "w-7 h-7" %>
+            <label class="btn btn-ghost rounded-btn flex-col font-normal">
+              <%= image_tag 'flower_question.png', class: "w-6 h-6" %>
+              <div class="text-xs text-white"><%= t 'defaults.header_question' %></div>
+            </label>
           <% end %>
-        </div>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.post_flower' %>>
           <%= link_to new_flower_path, class: 'flex justify-center' do %>
-            <%= image_tag 'paper_airplane.png', class: "w-7 h-7 mx-3" %>
+            <label class="btn btn-ghost rounded-btn flex-col font-normal">
+              <%= image_tag 'paper_airplane.png', class: "w-6 h-6" %>
+              <div class="text-xs text-white"><%= t 'defaults.header_post' %></div>
+            </label>
           <% end %>
-        </div>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.flower_index' %>>
           <%= link_to flowers_path, class: 'flex justify-center' do %>
-            <%= image_tag 'flower_index.png', class: "w-7 h-7" %>
+            <label class="btn btn-ghost rounded-btn flex-col font-normal">
+              <%= image_tag 'flower_index.png', class: "w-6 h-6" %>
+              <div class="text-xs text-white"><%= t 'defaults.header_index' %></div>
+            </label>
           <% end %>
-        </div>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.mypage' %>>
           <%= link_to profile_path, class: 'flex justify-center' do %>
-            <%= image_tag 'mypage.png', class: "w-7 h-7 mx-3" %>
+            <label class="btn btn-ghost rounded-btn flex-col font-normal">
+              <%= image_tag 'mypage.png', class: "w-6 h-6" %>
+              <div class="text-xs text-white"><%= t 'defaults.header_profile' %></div>
+            </label>
           <% end %>
-        </div>
-        <div class="tooltip tooltip-bottom tooltip-accent" data-tip=<%= t 'defaults.logout' %>>
           <%= button_to logout_path, class: 'flex justify-center logout', method: :delete do %>
-            <%= image_tag 'logout.png', class: 'w-7 h-7 mt-1 mr-5' %>
+            <label class="btn btn-ghost rounded-btn flex-col font-normal">
+              <%= image_tag 'logout.png', class: 'w-6 h-6' %>
+              <div class="text-xs text-white"><%= t 'defaults.logout' %></div>
+            </label>
           <% end %>
         </div>
       </div>

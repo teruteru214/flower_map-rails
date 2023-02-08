@@ -1,5 +1,9 @@
 ja:
   defaults:
+    header_question: "花名を質問"
+    header_post: "花を投稿"
+    header_index: "投稿一覧"
+    header_profile: "マイページ"
     new_user: "新規登録"
     login_user: "ログイン"
     login: "ログインする"
@@ -111,6 +115,8 @@ ja:
     destroy:
       success: "お気に入り解除しました"
   profiles:
+    show:
+      title: "マイページ"
     update:
       success: "ユーザーを更新しました"
       fail: "ユーザーを更新できませんでした"
@@ -126,8 +132,10 @@ ja:
       success: "質問が投稿されました！"
       fail: "質問が投稿できませんでした"
     show:
-      title: "花の名前、募集中！"
+      title: "花の名前、募集中"
       feature: "花の特徴"
+      edit: "編集する"
+      destroy: "削除する"
     edit:
       title: "質問を編集"
     update:
@@ -141,3 +149,8 @@ ja:
       fail: "回答に失敗しました"
     destroy:
       success: "回答を削除しました"
+  oauths:
+    callback:
+      success1: "Twitterアカウントでのアカウント作成に成功。ログインしました！"
+      success2: "Twitterアカウントでのログインに成功しました!"
+      fail: "Twitterアカウントでログインに失敗しました"
