@@ -23,8 +23,8 @@ end
   UnknownFlower.create(
     user: User.offset(rand(User.count)).first,
     image: File.open("./app/assets/images/no_image.png"),
+    date: Date.today,
     feature: 'test',
-    reception: 0
   )
 end
 
