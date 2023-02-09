@@ -24,16 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_05_065258) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "authentications", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "provider", null: false
-    t.string "uid", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
-    t.index ["user_id"], name: "index_authentications_on_user_id"
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text "body", null: false
     t.bigint "user_id", null: false

@@ -80,7 +80,7 @@ Rails.application.config.sorcery.configure do |config|
   # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
   # Default: `[]`
   #
-  config.external_providers = [:twitter]
+  # config.external_providers = [:google]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -117,14 +117,14 @@ Rails.application.config.sorcery.configure do |config|
   #
   # config.twitter.key = ""
   # config.twitter.secret = ""
-  config.twitter.key = ENV['twitter_key']
-  config.twitter.secret = ENV['twitter_secret_key']
-  config.twitter.callback_url = Settings.sorcery[:callback_url]
-  config.twitter.user_info_path = "/1.1/account/verify_credentials.json?include_email=true"
-  config.twitter.user_info_mapping = {
-  email: 'email',
-  name: 'name',
-  }
+  # config.twitter.key = ENV['twitter_key']
+  # config.twitter.secret = ENV['twitter_secret_key']
+  # config.twitter.callback_url = Settings.sorcery[:callback_url]
+  # config.twitter.user_info_path = "/1.1/account/verify_credentials.json?include_email=true"
+  # config.twitter.user_info_mapping = {
+  # email: 'email',
+  # name: 'name',
+  # }
   # config.facebook.key = ""
   # config.facebook.secret = ""
   # config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
@@ -163,9 +163,9 @@ Rails.application.config.sorcery.configure do |config|
   # config.auth0.callback_url = "https://0.0.0.0:3000/oauth/callback?provider=auth0"
   # config.auth0.site = "https://example.auth0.com"
   #
-  # config.google.key = ""
-  # config.google.secret = ""
-  # config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
+  # config.google.key = ENV['GOOGLE_CLIENT_ID']
+  # config.google.secret = ENV['GOOGLE_CLIENT_SECRET']
+  # config.google.callback_url = Settings.sorcery[:google_callback_url]
   # config.google.user_info_mapping = {:email => "email", :username => "name"}
   # config.google.scope = "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
   #
@@ -547,8 +547,7 @@ Rails.application.config.sorcery.configure do |config|
     # -- external --
     # Class which holds the various external provider data for this user.
     # Default: `nil`
-    #
-    user.authentications_class = Authentication
+    # user.authentications_class =
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`
