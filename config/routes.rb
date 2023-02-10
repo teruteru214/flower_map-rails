@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy], shallow: true
     collection do
       get :favorites
+      get 'search'
     end
   end
   resources :unknown_flowers do
