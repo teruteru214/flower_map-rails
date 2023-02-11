@@ -15,9 +15,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :favorites, only: %i[create destroy]
   resources :unknown_flowers do
     resources :answers, only: %i[create destroy], shallow: true
   end
-  resources :favorites, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
 end
