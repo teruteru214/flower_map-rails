@@ -108,3 +108,6 @@ gem "aws-sdk-s3", require: false
 
 # adapt to the environment(Twitter_login)
 gem 'config'
+
+# Search
+gem 'ransack'

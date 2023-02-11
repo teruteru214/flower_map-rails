@@ -10,4 +10,12 @@ class Flower < ApplicationRecord
   validates :date, presence: true
 
   enum status: { bad: 0, rather_bad: 1, usually: 2, good: 3, beautiful: 4 }
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["address", "address_detail", "name"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["comments", "favorites", "user"]
+  end
 end
