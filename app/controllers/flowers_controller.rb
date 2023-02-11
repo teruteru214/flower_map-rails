@@ -1,9 +1,9 @@
 class FlowersController < ApplicationController
   before_action :find_flower, only: %i[edit update destroy]
-  before_action :set_q, only: %i[index search]
 
   def index
-    @flowers = Flower.all.includes(:user).order(created_at: :desc).page(params[:page]).per(8)
+    @q = Flower.ransack(params[:q])
+    @flowers = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(8)
   end
 
   def new
@@ -49,15 +49,7 @@ class FlowersController < ApplicationController
     @favorite_flowers = current_user.favorite_flowers.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
-  def search
-    @results = @q.result
-  end
-
   private
-
-  def set_q
-    @q = Flower.ransack(params[:q])
-  end
 
   def flower_params
     params.require(:flower).permit(:latitude, :longitude, :address, :address_detail, :name, :date, :status, :flower_image, :flower_image_cache)

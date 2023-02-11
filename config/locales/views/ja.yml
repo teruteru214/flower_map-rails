@@ -103,6 +103,9 @@ ja:
       fail: "編集が失敗しました。不足している項目があります"
     destroy:
       success: "削除が完了しました"
+    search:
+      title: "検索結果"
+      no_search: "検索結果が見つかりませんでした"
   comments:
     create:
       success: "コメント投稿完了しました！"

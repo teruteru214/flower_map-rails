@@ -1,0 +1,8 @@
+<%= search_form_for @q, url: url do |f| %>
+  <div class="form-control">
+    <div class="input-group">
+      <%= f.search_field :name_or_address_cont, class: "input input-bordered w-64" %>
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
