@@ -41,6 +41,10 @@ class UnknownFlowersController < ApplicationController
     redirect_to unknown_flowers_path, success: t('.success')
   end
 
+  def receptions
+    @unknown_flowers = current_user.receptions_unknown_flowers
+  end
+
   private
 
   def unknown_flower_params
