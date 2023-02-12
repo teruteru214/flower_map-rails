@@ -325,6 +325,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
+    redis (4.8.1)
     regexp_parser (2.6.1)
     request_store (1.5.1)
       rack (>= 1.4)
@@ -451,6 +452,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rails-i18n
   ransack
+  redis (~> 4.0)
   rspec-rails
   rubocop
   rubocop-rails
