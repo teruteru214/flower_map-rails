@@ -8,8 +8,7 @@ class User < ApplicationRecord
   has_many :favorite_flowers, through: :favorites, source: :flower
   has_many :unknown_flowers, dependent: :destroy
   has_many :receptions, dependent: :destroy
-  has_many :unknown_flower_receptions, through: :receptions, source: :unknown_flower
-  has_many :unknown_flowers, through: :receptions, source: :unknown_flower
+  has_many :reception_unknown_flowers, through: :receptions, source: :unknown_flower
   has_many :answers, dependent: :destroy
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
@@ -23,16 +22,16 @@ class User < ApplicationRecord
     id == object.user_id
   end
 
-  def unknown_flower_reception(unknown_flower)
-    unknown_flowers << unknown_flower
+  def reception(unknown_flower)
+    reception_unknown_flowers << unknown_flower
   end
 
-  def known_flower_reception(unknown_flower)
-    unknown_flowers.destroy(unknown_flower)
+  def unreception(unknown_flower)
+    reception_unknown_flowers.destroy(unknown_flower)
   end
 
-  def unknown_flower_reception?(unknown_flower)
-    unknown_flowers.include?(unknown_flower)
+  def reception?(unknown_flower)
+    reception_unknown_flowers.include?(unknown_flower)
   end
 
   def favorite(flower)
