@@ -1,0 +1,5 @@
+<% if current_user.own?(unknown_flower) %>
+  <%= button_to (t 'defaults.awaiting_reply'), reception_path(current_user.receptions.find_by(unknown_flower_id: unknown_flower.id)), method: :delete, class: "badge badge-success" %>
+<% else %>
+  <div class="badge badge-success"><%= t 'defaults.awaiting_reply' %></div>
+<% end %>

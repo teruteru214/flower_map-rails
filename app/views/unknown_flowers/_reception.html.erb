@@ -1,0 +1,5 @@
+<% if current_user.own?(unknown_flower) %>
+  <%= button_to (t 'defaults.already_answered'), receptions_path(unknown_flower_id: unknown_flower.id), method: :post, class: "badge badge-warning" %>
+<% else %>
+  <div class="badge badge-warning"><%= t 'defaults.already_answered' %></div>
+<% end %>
