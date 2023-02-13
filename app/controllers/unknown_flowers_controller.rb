@@ -10,7 +10,7 @@ class UnknownFlowersController < ApplicationController
   end
 
   def create
-    @unknown_flower = current_user.unknown_flower.build(unknown_flower_params)
+    @unknown_flower = current_user.unknown_flowers.build(unknown_flower_params)
     if @unknown_flower.save
       redirect_to unknown_flowers_path, success: t('.success')
     else
@@ -39,6 +39,10 @@ class UnknownFlowersController < ApplicationController
   def destroy
     @unknown_flower.destroy!
     redirect_to unknown_flowers_path, success: t('.success')
+  end
+
+  def receptions
+    @unknown_flowers = current_user.receptions_unknown_flowers
   end
 
   private

@@ -42,6 +42,9 @@ ja:
     map_detail: "※(山や川など)住所を取得できない場所もあるのでご承知ください"
     feature: "花の特徴"
     search_flower: "花名と住所で検索できます"
+    already_answered: "回答済み"
+    awaiting_reply: "回答待ち"
+    indispensable: "必須"
   static_pages:
     top:
       theme: "見つけた花を地図に記録"

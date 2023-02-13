@@ -1,0 +1,5 @@
+<% if current_user.reception?(unknown_flower) %>
+  <%= render 'unreception', { unknown_flower: unknown_flower } %>
+<% else %>
+  <%= render 'reception', { unknown_flower: unknown_flower } %>
+<% end %>
