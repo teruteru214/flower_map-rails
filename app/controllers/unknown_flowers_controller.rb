@@ -52,6 +52,6 @@ class UnknownFlowersController < ApplicationController
   end
 
   def find_unknown_flower
-    @unknown_flower = current_user.unknown_flower.find(params[:id])
+    @unknown_flower = current_user.unknown_flowers.find(params[:id])
   end
 end
