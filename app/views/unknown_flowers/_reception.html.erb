@@ -1,8 +1,8 @@
 <% if current_user.own?(unknown_flower) %>
   <%= turbo_frame_tag dom_id(unknown_flower, :reception_unknown_flower) do %>
-    <%= link_to (t 'defaults.already_answered'), receptions_path(unknown_flower_id: unknown_flower.id), class: "badge badge-warning", id: "js-reception-button-for-unknown_flower-#{unknown_flower.id}",
+    <%= link_to (t 'defaults.awaiting_reply'), receptions_path(unknown_flower_id: unknown_flower.id), class: "badge badge-warning text-white", id: "js-reception-button-for-unknown_flower-#{unknown_flower.id}",
     data: { turbo_method: :post } %>
   <% end %>
 <% else %>
-  <div class="badge badge-warning"><%= t 'defaults.already_answered' %></div>
+  <div class="badge badge-warning text-white"><%= t 'defaults.awaiting_reply' %></div>
 <% end %>
