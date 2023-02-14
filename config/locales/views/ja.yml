@@ -45,11 +45,12 @@ ja:
     already_answered: "回答済み"
     awaiting_reply: "回答待ち"
     indispensable: "必須"
+    twitter_login: "Twitterで登録・ログイン"
+    twitter_register: "Twitterでログイン・登録"
   static_pages:
     top:
       theme: "見つけた花を地図に記録"
-      description: "FlowerMapは道端で見つけた花の位置を記録、"
-      description2: "共有をします"
+      description: "FlowerMapは道端で見つけた花の位置を記録、共有をします"
       treatment: "FlowerMapの使い方"
       part1: "その１. ログインしよう"
       description3: "本アプリの機能はログインしないと使えないのでご容赦ください"
@@ -57,13 +58,13 @@ ja:
       description4: "散歩中に見つけた花の写真をスマホ（もしくはカメラ）で取り、保存しましょう"
       part3: "その３. 花の位置を記録しよう"
       description5: "花の写真が撮れたら、自生していた位置を地図に記録して他の人に共有しましょう"
+      or: "OR"
   users:
     new:
       title: "新規登録"
       account_created: "アカウントをお持ちの方はこちら"
       register: "登録完了"
       or: "OR"
-      twitter_login: "Twitterで登録"
     create:
       success: "ユーザー登録が完了しました"
       fail: "ユーザー登録に失敗しました"
