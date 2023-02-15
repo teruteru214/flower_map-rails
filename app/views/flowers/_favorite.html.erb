@@ -1,5 +1,5 @@
 <div class="tooltip tooltip-bottom" data-tip=<%= t 'defaults.favorite' %>>
-  <%= button_to favorites_path(flower_id: flower.id), method: :post do %>
+  <%= link_to favorites_path(flower_id: flower.id), data: { turbo_method: :post } do %>
     <%= image_tag 'clover-white.png', class: "w-7 h-7" %>
   <% end %>
 </div>
