@@ -1,5 +1,5 @@
 class FlowersController < ApplicationController
-  before_action :find_flower, only: %i[edit update destroy]
+  before_action :find_flower, only: %i[edit update destroy favorite]
 
   def index
     @q = Flower.ransack(params[:q])
@@ -45,8 +45,8 @@ class FlowersController < ApplicationController
     redirect_to flowers_path, success: t('.success')
   end
 
-  def favotites
-    @favorite_flowers = current_user.favorite_flowers.includes(:user).order(created_at: :desc).page(params[:page])
+  def favorites
+    @favorite_flowers = current_user.favorite_flowers.includes(:user).order(created_at: :desc)
   end
 
   private
