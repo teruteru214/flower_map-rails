@@ -11,11 +11,7 @@
             <div>
               <h2 class="sm:text-xl text-base font-serif font-bold"><%= current_user.name %></h2>
               <p class="sm:text-base text-xs"><%= current_user.email %></p>
-              <%= link_to edit_profile_path do %>
-                <div class="btn btn-primary sm:btn-sm btn-xs font-light mt-2 w-28">
-                  <%= t('defaults.edit') %>
-                </div>
-              <% end %>
+              <%= link_to t('defaults.edit'), edit_profile_path, class: "btn btn-primary sm:btn-sm btn-xs font-light mt-2 w-28" %>
             </div>
           </div>
         </div>
