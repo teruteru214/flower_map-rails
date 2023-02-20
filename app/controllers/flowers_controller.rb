@@ -49,6 +49,10 @@ class FlowersController < ApplicationController
     @favorite_flowers = current_user.favorite_flowers.includes(:user).order(created_at: :desc)
   end
 
+  def post
+    @post_flowers = current_user.flowers.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def flower_params
