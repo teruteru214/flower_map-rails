@@ -1,0 +1,12 @@
+<div class="bg-base-200">
+  <div class="text-center">
+    <h1 class="sm:text-4xl text-3xl font-serif p-10 text-center text-accent-focus"><%= t '.title' %></h1>
+    <% if @favorite_flowers.present? %>
+      <div class="flex flex-wrap justify-center">
+        <%= render @favorite_flowers %>
+      </div>
+    <% else %>
+      <p class="text-3xl"><%= t '.no_favorite' %></p>
+    <% end %>
+  </div>
+</div>

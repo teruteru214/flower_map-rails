@@ -1,0 +1,12 @@
+<div class="bg-base-200">
+  <div class="text-center">
+    <h1 class="sm:text-4xl text-3xl font-serif p-10 text-center text-accent-focus"><%= t '.title' %></h1>
+    <% if @post_flowers.present? %>
+      <div class="flex flex-wrap justify-center">
+        <%= render @post_flowers %>
+      </div>
+    <% else %>
+      <p class="text-3xl"><%= t '.no_post' %></p>
+    <% end %>
+  </div>
+</div>

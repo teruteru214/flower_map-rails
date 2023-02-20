@@ -108,6 +108,12 @@ ja:
       fail: "編集が失敗しました。不足している項目があります"
     destroy:
       success: "削除が完了しました"
+    favorites:
+      title: "お気に入りの花"
+      no_favorite: "お気に入り登録がありません"
+    post:
+      title: "記録した花"
+      no_post: "記録した花はありません"
     search:
       title: "検索結果"
       no_search: "検索結果が見つかりませんでした"
@@ -125,6 +131,8 @@ ja:
   profiles:
     show:
       title: "マイページ"
+      favorites: "お気に入りの花一覧"
+      post: "投稿した花の一覧"
     update:
       success: "ユーザーを更新しました"
       fail: "ユーザーを更新できませんでした"
