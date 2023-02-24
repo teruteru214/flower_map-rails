@@ -1,7 +1,0 @@
-<% if current_user.own?(unknown_flower) %>
-  <%= turbo_frame_tag dom_id(unknown_flower, :reception_unknown_flower) do %>
-    <%= link_to (t 'defaults.already_answered'), reception_path(current_user.receptions.find_by(unknown_flower_id: unknown_flower.id)), class: "badge badge-success text-white", id: "js-reception-button-for-unknown_flower-#{unknown_flower.id}", data: { turbo_method: :delete } %>
-  <% end %>
-<% else %>
-  <div class="badge badge-success text-white"><%= t 'defaults.already_answered' %></div>
-<% end %>
