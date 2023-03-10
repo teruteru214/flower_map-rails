@@ -81,7 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: clenhocbq0024agp5199og4dj
-  username: clenhocbp0022agp58o4iccxd
+  database: flower_map_rails_production
+  username: flower_map_rails
   password: <%= ENV["FLOWER_MAP_RAILS_DATABASE_PASSWORD"] %>
-  url: <%= ENV['DATABASE_URL'] %>
