@@ -1,6 +1,6 @@
 default_url_options:
   protcol: "https"
-  host: "flower-map.herokuapp.com"
+  host: "flower-map.fly.dev"
 
 sorcery:
-  callback_url: "https://flower-map.herokuapp.com/oauth/callback?provider=twitter"
+  callback_url: "https://flower-map.fly.dev/oauth/callback?provider=twitter"
